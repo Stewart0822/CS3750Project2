@@ -1,0 +1,20 @@
+body {
+    padding: 3em;
+}
+
+textarea {
+    resize: none;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.topAligned {
+    vertical-align: top;
+}
+
+.party {
+    background-color: red;
+    margin-left: 50px;
+}
