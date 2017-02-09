@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='//code.jquery.com/jquery-1.11.0.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/index.js')
+        title Chatroom
+    body
+        h1 Chatroom
+        br
+        div
+            div.inlineBlock
+                span Your name:
+                    input(type="text", value="Anonymouse")#name
+                br
+                form#messageForm
+                    textarea(rows="4", cols="50", placeholder="Share Something!", maxlength=200)#outgoingMessage
+                    input(type="button", value="Share", disabled=true)#send
+            div.inlineBlock.topAligned.party
+                b Participants
+                br
+                div#participants
+            div#messages
