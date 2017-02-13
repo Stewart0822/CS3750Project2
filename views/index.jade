@@ -7,11 +7,23 @@ html
         script(src='/js/index.js')
         title Chatroom
     body
+        div#nav
+            div#nav_wrapper
+                ul
+                    li 
+                        a(href="#", title="Home") Home
+                    li
+                        a(href="#", title="Login") Login
+                    li
+                        a(href="#", title="About") About
+                    li
+                        a(href="#", title="Test") Test
+
         h1 Chatroom
         br
         div
             div.inlineBlock
-                span Your name:
+                span#you Your name:
                     input(type="text", value="Anonymouse")#name
                 br
                 form#messageForm
