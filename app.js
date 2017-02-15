@@ -19,8 +19,14 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 //my views
 
-app.get('/About', function(req, res) {
-   res.render('index', { title: 'Express' });
+// Home
+//app.get('/', function(req, res) {
+ //  res.render('index', { title: 'Express' });
+//});
+
+// Chat room
+app.get('/Chat', function(req, res) {
+   res.render('chatroom', { title: 'Express' });
 });
 
 app.post("/message", function(request, response) {

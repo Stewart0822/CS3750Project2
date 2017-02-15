@@ -1,0 +1,23 @@
+extends Shared/Layout.jade
+
+block content
+
+    div#heading
+        h1 Login
+    br
+    div
+        div.inlineBlock#login
+            div
+                span#username User Name: 
+                input(type="text", value="")#name
+            br
+            br
+            br
+            div
+                span#password Password:
+                input(type="text", value="******")#name
+            br
+            br
+            button.button.button1 Login
+            div#register
+                a(href="/Register", title="Register") Create New User

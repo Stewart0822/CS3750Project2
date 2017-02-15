@@ -6,18 +6,52 @@ body {
 }
 
 h1 {
-   color: white;
+    color: white;
+    margin-top: 25px;
+    border: 2px solid rgb(193, 193, 193);
+    border-radius: 8px;
+    padding: 10px 35px 10px 35px;
+    width: 15%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
 }
 
+#heading {
+    text-align: center;
+}
 span#you {
     color: white;
+    margin: 15px;
 }
+
+span#username {
+    color: white;
+    margin-right: 15px;
+}
+
+span#password {
+    color: white;
+    margin-right: 15px;
+    margin-left: 10px
+}
+
+input#name {
+    width: 300px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 textarea {
     resize: none;
 }
 
-.inlineBlock {
+.inlineBlock#login {
     display: inline-block;
+    margin-top: 50px;
 }
 
 .topAligned {
@@ -65,3 +99,41 @@ ul {
     padding: 0px;
 }
 
+#nav_wrapper a:hover {
+    color: #00ffad;
+}
+
+.button {
+    background-color:#377D7A;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #377D7A;
+    border-radius: 15px;
+    padding: 10px 30px 10px 30px;
+}
+
+.button1:hover {
+    background-color: #377D7A;
+    color: white;
+}
+#register {
+    margin-top: 15px;
+}
+#register a {
+    margin-top: 5px;
+    color: white;
+}
