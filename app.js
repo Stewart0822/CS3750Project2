@@ -10,6 +10,7 @@ socketController(io);
 
 
 var index = require('./routes/index');
+var chat = require('./routes/chat');
 
 app.set("ipaddr", "127.0.0.1");
 app.set("port", 3000);
@@ -26,10 +27,10 @@ app.use(express.static(path.join(__dirname + '/public')));
 //  res.render('index', { title: 'Express' });
 //});
 
-// Chat room
-app.get('/Chat', function(req, res) {
-    res.render('chatroom', { title: 'Express' });
-});
+// Chat room   -I think this is handled by a seperate controller
+//app.get('/Chat', function(req, res) {
+//    res.render('chatroom', { title: 'Express' });
+//});
 
 app.post("/message", function(request, response) {
     var message = request.body.message;
@@ -43,6 +44,7 @@ app.post("/message", function(request, response) {
 });
 
 app.use('/', index);
+app.use('/', chat);
 
 
 
