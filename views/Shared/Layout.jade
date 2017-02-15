@@ -1,12 +1,24 @@
 doctype html
 html
     head
-        style
-        
-        
-
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='//code.jquery.com/jquery-1.11.0.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/index.js')
+        title Chatroom
     body
-        ul
-            li Home
-            li Login
-            li About
+        div#nav
+            div#nav_wrapper
+                ul
+                    li 
+                        a(href="/", title="Home") Home
+                    li
+                        a(href="#", title="Chat") Chatroom
+                    li
+                        a(href="#", title="Sign up") Register
+                    li
+                        a(href="#", title="About") About
+                    li
+                        a(href="#", title="Login") Login
+    block content
+        

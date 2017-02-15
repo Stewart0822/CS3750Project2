@@ -17,6 +17,12 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "jade");
 app.use(express.static(path.join(__dirname + '/public')));
 
+//my views
+
+app.get('/About', function(req, res) {
+   res.render('index', { title: 'Express' });
+});
+
 app.post("/message", function(request, response) {
     var message = request.body.message;
     if (request.body.message == undefined || request.body.message.trim() == "") {
