@@ -1,7 +1,8 @@
 extends Shared/Layout.jade
 
 block content
-
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/chatroom.js')
     h1 Chatroom
     br
     div
@@ -17,3 +18,4 @@ block content
             br
             div#participants
          div#messages
+
