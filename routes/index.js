@@ -7,10 +7,6 @@ router.get("/", function(request, response, next) {
     response.render("index");
 });
 
-router.get("/Chat", function(request, response, next) {
-    response.render("chatroom.jade");
-});
-
 router.get("/Login", function(request, response, next) {
     response.render("login.jade");
 });

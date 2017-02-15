@@ -4,10 +4,13 @@ var express = require("express"),
 var path = require('path');
 var io = require("socket.io").listen(http);
 var bodyParser = require('body-parser');
+var socketController = require('./controllers/chatController');
+socketController(io);
 
-var participants = [];
+
 
 var index = require('./routes/index');
+var chat = require('./routes/chat');
 
 app.set("ipaddr", "127.0.0.1");
 app.set("port", 3000);
@@ -21,13 +24,13 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 // Home
 //app.get('/', function(req, res) {
- //  res.render('index', { title: 'Express' });
+//  res.render('index', { title: 'Express' });
 //});
 
-// Chat room
-app.get('/Chat', function(req, res) {
-   res.render('chatroom', { title: 'Express' });
-});
+// Chat room   -I think this is handled by a seperate controller
+//app.get('/Chat', function(req, res) {
+//    res.render('chatroom', { title: 'Express' });
+//});
 
 app.post("/message", function(request, response) {
     var message = request.body.message;
@@ -41,33 +44,11 @@ app.post("/message", function(request, response) {
 });
 
 app.use('/', index);
+app.use('/', chat);
 
 
 
 
-io.on("connection", function(socket) {
-    socket.on("newUser", function(data) {
-        participants.push({ id: data.id, name: data.name });
-        io.sockets.emit("newConnection", { participants: participants })
-    });
-
-    socket.on("nameChange", function(data) {
-        participants.forEach(function(e) {
-            if (e.id == data.id)
-                e.name = data.name;
-        });
-        io.sockets.emit("nameChanged", { id: data.id, name: data.name });
-    });
-
-    socket.on("disconnect", function() {
-        participants = participants.filter(function(data) {
-            return data.id != socket.id;
-        });
-        io.sockets.emit("userDisconnected", { id: socket.id, sender: "system" });
-    });
-
-
-});
 
 http.listen(app.get("port"), app.get("ipaddr"), function() {
     console.log("server up and running. Got to http://" + app.get("ipaddr") + ":" + app.get("port"));
