@@ -19,4 +19,8 @@ router.get("/Register", function(request, response, next) {
     response.render("register.jade");
 });
 
+router.get("/About", function(request, response, next) {
+    response.render("about.jade");
+});
+
 module.exports = router;
