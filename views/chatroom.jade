@@ -1,0 +1,19 @@
+extends Shared/Layout.jade
+
+block content
+
+    h1 Chatroom
+    br
+    div
+        div.inlineBlock
+            span#you Your name:
+            input(type="text", value="Anonymouse")#name
+            br
+            form#messageForm
+                textarea(rows="4", cols="50", placeholder="Share Something!", maxlength=200)#outgoingMessage
+                input(type="button", value="Share", disabled=true)#send
+         div.inlineBlock.topAligned.party
+            b Participants
+            br
+            div#participants
+         div#messages
