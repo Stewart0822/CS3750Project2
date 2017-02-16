@@ -4,18 +4,19 @@ block content
     script(src='/socket.io/socket.io.js')
     script(src='/js/chatroom.js')
     h1 Chatroom
-    br
-    div
+    div#chat
         div.inlineBlock
-            span#you Your name:
-            input(type="text", value="Anonymouse")#name
-            br
+            //span#you Your name:
+            input(type="hidden", value="Anonymouse")#name
+            //br
+            div#messages
+            div.inlineBlock.party
+                b Participants
+                hr
+                div#participants
             form#messageForm
-                textarea(rows="4", cols="50", placeholder="Share Something!", maxlength=200)#outgoingMessage
-                input(type="button", value="Share", disabled=true)#send
-         div.inlineBlock.topAligned.party
-            b Participants
-            br
-            div#participants
-         div#messages
+                textarea(rows="1", cols="50", placeholder="Share Something!", maxlength=200, style="width:90%;float:left;")#outgoingMessage
+                input(type="button", value="Share", disabled=true, style="width: 9%; margin:auto;")#send
+         
+         
 

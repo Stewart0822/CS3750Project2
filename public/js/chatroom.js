@@ -40,7 +40,8 @@ function init() {
     socket.on('incomingMessage', function(data) {
         var message = data.message;
         var name = data.name;
-        $('#messages').prepend('<b>' + name + '</b><br >' + message + '<hr />');
+        $('#messages').append('' + name + ': ' + message + '<br />');
+        scrollDown();
     });
     socket.on('error', function(reason) {
         console.log('Unable to connect to server', reason);
@@ -85,5 +86,11 @@ function init() {
     $('#send').on('click', sendMessage);
 
 }
-console.log('test1');
 $(document).on('ready', init);
+
+function scrollDown(){
+    var objDiv = document.getElementById("messages");
+    if(objDiv.scrollHeight != null){
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+}

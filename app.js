@@ -12,6 +12,7 @@ socketController(io);
 var index = require('./routes/index');
 var chat = require('./routes/chat');
 
+
 app.set("ipaddr", "127.0.0.1");
 app.set("port", 3000);
 app.use(bodyParser.json());
