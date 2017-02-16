@@ -4,10 +4,14 @@ var express = require("express"),
 var path = require('path');
 var io = require("socket.io").listen(http);
 var bodyParser = require('body-parser');
-
+var db = require('./db');
+var mongoose = require(mongoose);
 var participants = [];
 
+//var User = mongoose.model('User', UserSchema);
+
 var index = require('./routes/index');
+var login = require('./routes/login');
 
 app.set("ipaddr", "127.0.0.1");
 app.set("port", 3000);
@@ -28,10 +32,29 @@ app.post("/message", function(request, response) {
     response.status(200).json({ message: "Message received" });
 });
 
-app.use('/', index);
+app.post("/login", function(request, response){
+    var login = request.body.login;
+    if (request.body.login == undefined || request.body.login.trim() == ""){
+        return response.status(400).json({error: "Login is invalid"});
+    }
+    var password = request.body.password;
+    if (request.body.password == undefined || request.body.password.trim() == ""){
+        return response.status(400).json({error: "Login is invalid"});
+    }
+    
+    var User = mongoose.model('User', UserSchema);
+
+    User.find({name: login, password: password}, callback)
+    //db.collection('users').find({name: login, password: password}) != null)
+    //{
+      //  return app.use('/',index);
+   // }
+    
 
 
+});
 
+app.use('/', login);
 
 io.on("connection", function(socket) {
     socket.on("newUser", function(data) {

@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='//code.jquery.com/jquery-1.11.0.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/login.js')
+        title Login
+    body
+        h1 Login
+        br
+        div
+            div.inlineBlock
+                span Login name: 
+                    input(type="text", placeholder="-Login-")#login
+                br
+                span Password: 
+                    input(type="text", placeholder="-Password-")#password
+                br
+                input(type="button", value="Login", disabled=true)#loginButton
+                br
