@@ -20,10 +20,15 @@ module.exports = function(io) {
         if (request.body.message == undefined || request.body.message.trim() == "") {
             return response.status(400).json({ error: "Message is invalid" });
         }
-        var name = request.body.name;
-        io.sockets.emit("incomingMessage", { message: message, name: name });
+        if (message.charAt(0) == '/') {
+            response.status(200).json({ message: "Taco Salad" });
+        } else {
+            var name = request.body.name;
+            io.sockets.emit("incomingMessage", { message: message, name: name });
+            //save message to users file in DB
 
-        response.status(200).json({ message: "Message received" });
+            response.status(200).json({ message: "Message received" });
+        }
     });
 
     return router

@@ -34,29 +34,49 @@ function init() {
     socket.on('userDisconnected', function(data) {
         $('#' + data.id).remove();
     });
-    socket.on('nameChanged', function(data) {
-        $('#' + data.id).html(data.name + ' ' + (data.id === sessionId ? '(You)' : '') + '<br />');
-    });
+
+
     socket.on('incomingMessage', function(data) {
-        var message = data.message;
+        showMessage(data.name, data.message);
+        /*var message = data.message;
         var name = data.name;
-        $('#messages').append('' + name + ': ' + message + '<br />');
-        scrollDown();
+        
+        var messageDiv = document.createElement('div');
+        messageDiv.style.clear = 'both';
+        var messageDivName = document.createElement('div');
+        messageDivName.style.fontSize = '12';
+        messageDivName.style.cssFloat = 'left';
+        var messageDivMessage = document.createElement('div');
+        messageDivMessage.style.cssFloat = 'left';
+        messageDivName.innerHTML = '' + name + ': ';
+        messageDivMessage.textContent = ' ' + message;
+        messageDiv.appendChild(messageDivName);
+        messageDiv.appendChild(messageDivMessage);
+        $('#messages').append(messageDiv);
+        scrollDown();*/
     });
+
     socket.on('error', function(reason) {
         console.log('Unable to connect to server', reason);
     });
 
     function sendMessage() {
         var outgoingMessage = $('#outgoingMessage').val();
+        $('#outgoingMessage').val("");
         var name = $('#name').val();
         $.ajax({
             url: '/message',
             type: 'POST',
             contentType: 'application/json',
             dataType: 'json',
-            data: JSON.stringify({ message: outgoingMessage, name: name })
+            data: JSON.stringify({ message: outgoingMessage, name: name }),
+            success: function(res) {
+                if (res.message != 'Message received') {
+                    showMessage('<b style="color:blue;">Administrator:</b>', res.message);
+                }
+            }
         });
+
     }
 
     function outgoingMessageKeyDown(event) {
@@ -75,22 +95,35 @@ function init() {
         $('#send').attr('disabled', (outgoingMessageValue.trim()).length > 0 ? false : true);
     }
 
-    function nameFocusOut() {
-        var name = $('#name').val();
-        socket.emit('nameChange', { id: sessionId, name: name });
-    }
+
 
     $('#outgoingMessage').on('keydown', outgoingMessageKeyDown);
     $('#outgoingMessage').on('keyup', outgoingMessageKeyUp);
-    $('#name').on('focusout', nameFocusOut);
+
     $('#send').on('click', sendMessage);
 
 }
 $(document).on('ready', init);
 
-function scrollDown(){
+function scrollDown() {
     var objDiv = document.getElementById("messages");
-    if(objDiv.scrollHeight != null){
+    if (objDiv.scrollHeight != null) {
         objDiv.scrollTop = objDiv.scrollHeight;
     }
+}
+
+function showMessage(name, message) {
+    var messageDiv = document.createElement('div');
+    messageDiv.style.clear = 'both';
+    var messageDivName = document.createElement('div');
+    messageDivName.style.fontSize = '12';
+    messageDivName.style.cssFloat = 'left';
+    var messageDivMessage = document.createElement('div');
+    messageDivMessage.style.cssFloat = 'left';
+    messageDivName.innerHTML = '' + name + ':&nbsp&nbsp';
+    messageDivMessage.textContent = '' + message;
+    messageDiv.appendChild(messageDivName);
+    messageDiv.appendChild(messageDivMessage);
+    $('#messages').append(messageDiv);
+    scrollDown();
 }
