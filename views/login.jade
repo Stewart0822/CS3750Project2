@@ -1,8 +1,7 @@
 extends Shared/Layout.jade
-script(src='../public/js/login.js') 
 
 block content
-
+    script(src='/js/login.js')
     div#heading
         h1 Login
     br
@@ -18,6 +17,7 @@ block content
             div
                 span#password Password:
                 input(type="text", value="")#pwd
+                
                 label#pwdErr ba;;script
             br
             br
