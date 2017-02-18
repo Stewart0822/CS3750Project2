@@ -36,7 +36,7 @@ span#password {
     margin-left: 10px
 }
 
-input#name {
+input#name, #pwd{
     width: 300px;
     margin: 8px 0;
     padding: 12px 20px;
