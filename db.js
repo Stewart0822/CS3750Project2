@@ -1,3 +1,3 @@
 module.exports = {
-    'url' : 'mongodb://localhost/ForP2/test'
+    'url': 'mongodb://localhost/UserChat'
 }
