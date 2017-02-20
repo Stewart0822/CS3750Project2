@@ -7,7 +7,7 @@ router.get("/", function(request, response, next) {
     response.render("index");
 });
 
-router.get("/Login", function(request, response, next) {
+router.get("/Users/Login", function(request, response, next) {
     response.render("login.jade");
 });
 

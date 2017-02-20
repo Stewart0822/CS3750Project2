@@ -6,8 +6,9 @@ var io = require("socket.io").listen(http);
 var bodyParser = require('body-parser');
 var socketController = require('./controllers/chatController');
 socketController(io);
-
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/ForP2')
+var models = require('./models');
 
 var index = require('./routes/index');
 var chat = require('./routes/chat');
