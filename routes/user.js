@@ -32,8 +32,10 @@ module.exports = function(User) {
         console.log("in the login post func %S %S", username, password);
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
+                console.log('in the if');
                 response.redirect('/chat');
             } else {
+                console.log('in the else');
                 response.redirect('/users/login');
             }
         })
