@@ -59,7 +59,7 @@ module.exports = function(User) {
                         console.log(name);
                         console.log(user.password);
                         console.log(pass);
-                    return fn(user);}
+                    return fn(null,user);}
                     console.log('password does not match');
                 } else {
                     console.log("here1?")
