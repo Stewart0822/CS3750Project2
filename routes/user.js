@@ -33,10 +33,10 @@ module.exports = function(User) {
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
                 console.log('in the if');
-                response.redirect('/chat');
+                response.send({redirect: "/chat"});
             } else {
                 console.log('in the else');
-                response.redirect('/users/login');
+                response.redirect(301,'/users/login');
             }
         })
     });

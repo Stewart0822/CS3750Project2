@@ -8,7 +8,12 @@ function loginNow() {
         type: 'POST',
         contentType: 'application/json',
         dataType: 'json',
-        data: JSON.stringify({username: username, password: password})
+        data: JSON.stringify({username: username, password: password}),
+        success: function(data, textStatus, jqXHR) {
+                if (typeof data.redirect == 'string'){
+                    window.location = data.redirect
+                }
+        }
     });
 }
 
