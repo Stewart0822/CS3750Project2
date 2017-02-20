@@ -26,11 +26,12 @@ module.exports = function(User) {
 
 
     router.post("/login", function(request, response) {
+        var username = request.body.username;
+        var password = request.body.password;
 
-        console.log("in the login post func");
+        console.log("in the login post func %S %S", username, password);
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
-
                 response.redirect('/chat');
             } else {
                 response.redirect('/users/login');
@@ -40,6 +41,8 @@ module.exports = function(User) {
 
     function authenticate(name, pass, fn) {
         if (!module.parent) console.log('auth');
+        //console.log(name);
+        //console.log(pass);
 
         User.findOne({
                 name: name
@@ -48,7 +51,14 @@ module.exports = function(User) {
             function(err, user) {
                 if (user) {
                     if (err) return fn(new Error('cannot find user'));
-                    if (pass == user.password) return fn(null, user);
+                    console.log('user found');
+                    if (pass == user.password) {
+                        console.log(user.name);
+                        console.log(name);
+                        console.log(user.password);
+                        console.log(pass);
+                    return fn(user);}
+                    console.log('password does not match');
                 } else {
                     console.log("here1?")
                     return fn(new Error('cannot find user'));
