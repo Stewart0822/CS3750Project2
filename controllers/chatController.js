@@ -9,13 +9,7 @@ module.exports = function(io) {
             io.sockets.emit("newConnection", { participants: participants })
         });
 
-        socket.on("nameChange", function(data) {
-            participants.forEach(function(e) {
-                if (e.id == data.id)
-                    e.name = data.name;
-            });
-            io.sockets.emit("nameChanged", { id: data.id, name: data.name });
-        });
+
 
         socket.on("disconnect", function() {
             participants = participants.filter(function(data) {
