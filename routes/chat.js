@@ -27,7 +27,7 @@ module.exports = function(io, User) {
             io.sockets.emit("incomingMessage", { message: message, name: name });
             //save message to users file in DB
 
-            User.findOne({ name: 'Fred' }, function(err, user) {
+            User.findOne({ name: 'Fred' }, function(err, user) { //change this to be the current user ID from the session variable
 
                 user.messages.push({ dateTime: thisDate(), message: message });
                 user.save();
