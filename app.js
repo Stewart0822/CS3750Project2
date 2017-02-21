@@ -21,7 +21,7 @@ var User = require('./models/mongoModels')(mongoose);
 
 var index = require('./routes/index');
 var user = require('./routes/user')(User);
-var chat = require('./routes/chat')(io);
+var chat = require('./routes/chat')(io, User);
 
 
 app.set("ipaddr", "127.0.0.1");

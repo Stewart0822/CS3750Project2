@@ -1,4 +1,4 @@
-module.exports = function(io) {
+module.exports = function(io, User) {
 
     var express = require('express');
     var router = express.Router();
@@ -27,9 +27,26 @@ module.exports = function(io) {
             io.sockets.emit("incomingMessage", { message: message, name: name });
             //save message to users file in DB
 
+            User.findOne({ name: 'Fred' }, function(err, user) {
+
+                user.messages.push({ dateTime: thisDate(), message: message });
+                user.save();
+
+                console.log(user);
+            });
             response.status(200).json({ message: "Message received" });
         }
     });
+
+    function thisDate() {
+        var today = new Date;
+        return today.getFullYear() +
+            ":" + today.getMonth() +
+            ":" + today.getDate() +
+            ":" + today.getHours() +
+            ":" + today.getMinutes() +
+            ":" + today.getSeconds()
+    };
 
     return router
 }
