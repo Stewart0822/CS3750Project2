@@ -14,7 +14,7 @@ module.exports = function(User) {
     });
 
     router.post("/Users/Register/NewUser", function(request, response, next) {
-        console.log(request.body.name);
+        //console.log(request.body.name);
         var anewone = new User;
         anewone.name = request.body.name;
         anewone.password = request.body.password;
