@@ -33,10 +33,10 @@ module.exports = function(User) {
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
                 console.log('in the if');
-                response.send({redirect: "/chat"});
+                response.status(200).json({ message: "Message received" }); //Changed these out to status codes
             } else {
                 console.log('in the else');
-                response.redirect(301,'/users/login');
+                response.status(301).json({ message: "Invalid Login Details Supplied" });
             }
         })
     });
@@ -55,11 +55,8 @@ module.exports = function(User) {
                     if (err) return fn(new Error('cannot find user'));
                     console.log('user found');
                     if (pass == user.password) {
-                        console.log(user.name);
-                        console.log(name);
-                        console.log(user.password);
-                        console.log(pass);
-                    return fn(null,user);}
+                        return fn(null, user);
+                    }
                     console.log('password does not match');
                 } else {
                     console.log("here1?")

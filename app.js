@@ -15,16 +15,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log('connected to db');
 });
-mongoose.connect(dbConfig.url)
-var UserSchema = new mongoose.Schema({
-    name: String,
-    password: String,
-    email: String
-});
-//end database stoof
-
-
-var User = mongoose.model('users', UserSchema);
+mongoose.connect(dbConfig.url);
+var User = require('./models/mongoModels')(mongoose);
 
 
 var index = require('./routes/index');

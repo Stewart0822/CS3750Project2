@@ -1,13 +1,15 @@
-var mongoose = require('mongoose');
+module.exports = function(mongoose) {
 
-var UserSchema = new mongoose.Schema( 
-{
-    username: String,
-    password: String,
-    message: String,
-    email: String
-});
+    var UserSchema = new mongoose.Schema({
+        username: String,
+        firstname: String,
+        lastname: String,
+        password: String,
+        email: String,
+        messages: []
 
-var User = mongoose.model('users', UserSchema);
+    });
 
-module.exports = User;
+    var User = mongoose.model('users', UserSchema);
+    return User;
+}
