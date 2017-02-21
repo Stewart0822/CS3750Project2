@@ -7,9 +7,20 @@ var bodyParser = require('body-parser');
 var socketController = require('./controllers/chatController');
 socketController(io);
 
+//database stuff
+var dbConfig = require('./db.js');
+var mongoose = require('mongoose');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('connected to db');
+});
+mongoose.connect(dbConfig.url);
+var User = require('./models/mongoModels')(mongoose);
 
 
 var index = require('./routes/index');
+var user = require('./routes/user')(User);
 var chat = require('./routes/chat')(io);
 
 
@@ -25,6 +36,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 app.use('/', index);
 app.use('/', chat);
+app.use('/', user)
 
 
 
