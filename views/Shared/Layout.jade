@@ -3,26 +3,26 @@ html
     head
         link(rel='stylesheet', href='/css/style.css')
         script(src='//code.jquery.com/jquery-1.11.0.min.js')
-        
-        
+        script(src='/js/login.js')
         title Chatroom
     body
         div#nav
             div#nav_wrapper
                 ul
                     li 
-                        a(href="/", title="Home") Home
-                        script.                            
-                                console.log(document);
-                            
-                                
-                    li
-                        a(href="/chat", title="Chat") Chatroom                   
-                    li
+                        a(href="/", title="Home") Home                       
+                    script.
+                        if(#{loggedIn} === true)
+                            document.write('<li> <a href="/chat", title="Chat"> Chatroom</a></li>');              
+                    //li
                         a(href="/Users/Register", title="Register") Register
                     li
                         a(href="/About", title="About") About
-                    li
-                        a(href="/Users/Login", title="Login") Login
+                    script.
+                        if(#{loggedIn} === false)
+                            document.write('<li> <a href="/Users/Login"" title="Login"> Login</a></li>'); 
+                    script.
+                        if(#{loggedIn} === true)
+                            document.write('<li> <a id="logout" href="" title="Logout"> Logout</a></li>'); 
     block content
         

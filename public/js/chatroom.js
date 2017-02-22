@@ -62,6 +62,7 @@ function init() {
 
     function sendMessage() {
         var outgoingMessage = $('#outgoingMessage').val();
+        console.log(outgoingMessage);
         $('#outgoingMessage').val("");
         var name = $('#name').val();
         $.ajax({
