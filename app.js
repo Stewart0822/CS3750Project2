@@ -16,8 +16,9 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    console.log('connected to db');
+    console.log('Connected to Database');
 });
+
 mongoose.connect(dbConfig.url);
 var User = require('./models/mongoModels')(mongoose);
 
@@ -38,13 +39,6 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.set('trust proxy', 1);
 app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'] }));
 
-/*
-app.use(function(req, res, next) {
-    req.session.myName = null;
-    //console.log(req.session.myName);
-    next();
-})
-*/
 
 
 app.use('/', index);

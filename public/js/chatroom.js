@@ -38,22 +38,6 @@ function init() {
 
     socket.on('incomingMessage', function(data) {
         showMessage(data.name, data.message);
-        /*var message = data.message;
-        var name = data.name;
-        
-        var messageDiv = document.createElement('div');
-        messageDiv.style.clear = 'both';
-        var messageDivName = document.createElement('div');
-        messageDivName.style.fontSize = '12';
-        messageDivName.style.cssFloat = 'left';
-        var messageDivMessage = document.createElement('div');
-        messageDivMessage.style.cssFloat = 'left';
-        messageDivName.innerHTML = '' + name + ': ';
-        messageDivMessage.textContent = ' ' + message;
-        messageDiv.appendChild(messageDivName);
-        messageDiv.appendChild(messageDivMessage);
-        $('#messages').append(messageDiv);
-        scrollDown();*/
     });
 
     socket.on('error', function(reason) {

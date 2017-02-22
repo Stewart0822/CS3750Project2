@@ -10,9 +10,7 @@ function init() {
             dataType: 'json',
             data: JSON.stringify({ username: username, password: password }),
             success: function(data, textStatus, jqXHR) {
-                //Should set session variable here once authenticated. Chat will eventually not load without it. 
-                window.location = '../chat'
-
+                window.location = '../chat';
             },
             error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
                 console.log(err);
@@ -22,7 +20,6 @@ function init() {
     }
 
     function logoutNow() {
-        console.log("test");
         $.ajax({
             url: '/Users/logout',
             type: 'POST',
@@ -30,14 +27,8 @@ function init() {
             dataType: 'json',
             data: JSON.stringify({}),
             success: function(data, textStatus, jqXHR) {
-                //Should set session variable here once authenticated. Chat will eventually not load without it. 
                 window.location = '../'
-
-            },
-            error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
-                console.log(err);
             }
-
         });
     }
 

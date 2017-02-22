@@ -6,14 +6,11 @@ module.exports = function(User) {
     let loggedin = false;
 
     router.all('/*', function(request, response, next) {
-        //if the user is logged in send true
         if (request.session.myName != null && request.session.myName != undefined) {
             loggedin = true;
         } else {
             loggedin = false;
         }
-        //else invoke next
-
         next();
     })
 
@@ -26,14 +23,13 @@ module.exports = function(User) {
     });
 
     router.post("/Users/Register/NewUser", function(request, response, next) {
-        //console.log(request.body.name);
         var anewone = new User;
         anewone.name = request.body.name;
         anewone.password = request.body.password;
         anewone.email = request.body.email;
         console.log(anewone);
         anewone.save();
-        //console.log(User.find({ name: 'Fred' }));
+        //redirect to login page
     });
 
 
@@ -62,8 +58,6 @@ module.exports = function(User) {
 
     function authenticate(name, pass, fn) {
         if (!module.parent) console.log('auth');
-        //console.log(name);
-        //console.log(pass);
 
         User.findOne({
                 name: name
@@ -72,13 +66,12 @@ module.exports = function(User) {
             function(err, user) {
                 if (user) {
                     if (err) return fn(new Error('cannot find user'));
-                    console.log('user found');
                     if (pass == user.password) {
                         return fn(null, user);
                     }
-                    console.log('password does not match');
+                    //need code here in an else statement
                 } else {
-                    console.log("here1?")
+                    //console.log("here1?")
                     return fn(new Error('cannot find user'));
                 }
             });
