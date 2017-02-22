@@ -4,19 +4,23 @@ module.exports = function(io, User) {
     var router = express.Router();
 
 
-    router.all(function(request, response, next) {
+    router.all('/chat*', function(request, response, next) {
         //if not req.session.userID redirect to login page
+        if (request.session.myName === null || request.session.myName === undefined) {
+            response.redirect('/Users/Login');
+            return;
+        }
         //else invoke next
         next();
     })
 
     router.get("/chat", function(request, response, next) {
-        response.render("chatroom.jade");
+        console.log(request.session.myName);
+        response.render("chatroom.jade", { username: request.session.myName });
     });
 
 
-    router.post("/message", function(request, response) {
-        var message = request.body.message;
+    router.post("/chat/message", function(request, response) {
         if (request.body.message == undefined || request.body.message.trim() == "") {
             return response.status(400).json({ error: "Message is invalid" });
         }
@@ -27,7 +31,7 @@ module.exports = function(io, User) {
             io.sockets.emit("incomingMessage", { message: message, name: name });
             //save message to users file in DB
 
-            User.findOne({ name: 'Fred' }, function(err, user) { //change this to be the current user ID from the session variable
+            User.findOne({ name: name }, function(err, user) { //change this to be the current user ID from the session variable
 
                 user.messages.push({ dateTime: thisDate(), message: message });
                 user.save();

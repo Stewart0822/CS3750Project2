@@ -4,8 +4,11 @@ var express = require("express"),
 var path = require('path');
 const io = require("socket.io").listen(http);
 var bodyParser = require('body-parser');
+var cookieSession = require('cookie-session');
 var socketController = require('./controllers/chatController');
 socketController(io);
+
+
 
 //database stuff
 var dbConfig = require('./db.js');
@@ -32,6 +35,16 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "jade");
 app.use(express.static(path.join(__dirname + '/public')));
 
+app.set('trust proxy', 1);
+app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'] }));
+
+/*
+app.use(function(req, res, next) {
+    req.session.myName = null;
+    //console.log(req.session.myName);
+    next();
+})
+*/
 
 
 app.use('/', index);

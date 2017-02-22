@@ -32,7 +32,7 @@ module.exports = function(User) {
         console.log("in the login post func %S %S", username, password);
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
-                console.log('in the if');
+                request.session.myName = user.name;
                 response.status(200).json({ message: "Message received" }); //Changed these out to status codes
             } else {
                 console.log('in the else');
