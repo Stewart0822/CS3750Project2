@@ -1,10 +1,16 @@
 doctype html
 html
+
+
+
     head
         link(rel='stylesheet', href='/css/style.css')
         script(src='//code.jquery.com/jquery-1.11.0.min.js')
-        
-        
+        script(src='/js/sessions.js')
+
+
+
+
         title Chatroom
     body
         div#nav
@@ -12,13 +18,25 @@ html
                 ul
                     li 
                         a(href="/", title="Home") Home
-                    li
-                        a(href="/chat", title="Chat") Chatroom
+                    if(code == 2 || code == 500)
+                        li
+                            a(href="/chat", title="Chat") Chatroom
                     li
                         a(href="/Register", title="Register") Register
                     li
                         a(href="/About", title="About") About
-                    li
-                        a(href="/Login", title="Login") Login
+                
+                    if(code == 2 || code == 500)
+                        li
+                            a(href="/Logout", title= "Logout") Logout
+                    
+                    else
+                        li
+                            a(href="/Login", title= "Login") Login
+                    
+
+  
+
+                    
     block content
         
