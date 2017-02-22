@@ -4,8 +4,11 @@ var express = require("express"),
 var path = require('path');
 const io = require("socket.io").listen(http);
 var bodyParser = require('body-parser');
+var cookieSession = require('cookie-session');
 var socketController = require('./controllers/chatController');
 socketController(io);
+
+
 
 //database stuff
 var dbConfig = require('./db.js');
@@ -13,8 +16,9 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    console.log('connected to db');
+    console.log('Connected to Database');
 });
+
 mongoose.connect(dbConfig.url);
 var User = require('./models/mongoModels')(mongoose);
 
@@ -31,6 +35,9 @@ app.use(bodyParser.json());
 app.set("views", __dirname + "/views");
 app.set("view engine", "jade");
 app.use(express.static(path.join(__dirname + '/public')));
+
+app.set('trust proxy', 1);
+app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'] }));
 
 
 
