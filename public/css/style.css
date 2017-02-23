@@ -32,12 +32,40 @@ span#username {
 
 span#password {
     color: white;
+    margin-right: 25px;
+}
+
+span#lastname {
+    color: white;
+    margin-right: 18px;
+}
+
+span#email {
+    color: white;
+    margin-right: 60px;
+}
+
+span#firstname {
+    color: white;
+    margin-right: 22px;
+}
+
+span#repassword {
+    color: white;
     margin-right: 15px;
-    margin-left: 10px
 }
 
 input#name {
     width: 300px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input#repassname {
+    width: 255px;
     margin: 8px 0;
     padding: 12px 20px;
     border: 1px solid #ccc;
@@ -108,7 +136,7 @@ ul {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 30px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -125,6 +153,12 @@ ul {
 .button1:hover {
     background-color: #377D7A;
     color: white;
+}
+
+.button#cancel:hover {
+    background-color: red;
+    color: white;
+    border-color: red;
 }
 #register {
     margin-top: 15px;
