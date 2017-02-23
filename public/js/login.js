@@ -30,7 +30,7 @@ function init() {
                 window.location = '../'
             }
         });
-    }
+    }  
 
     $('#login').on('click', loginNow)
     $('#logout').on('click', logoutNow)
