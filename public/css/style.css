@@ -5,7 +5,6 @@ body {
     text-align: center;
     background-color:#303030;
     background-image: url(material.jpg);
-   
 }
 
 h1 {
@@ -229,4 +228,31 @@ textarea {
     margin-top: 200px;
     font-family: Arial, sans-serif;
     margin-left: 40px;
+}
+
+#aboutProjectDescription {
+    width: 98%;
+    height: 180px;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+   
+}
+
+#aboutRequirements {
+    width: 98%;
+    height: 400px;
+    color: whitesmoke;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.aboutRequirements-div a:link, .aboutRequirements-div a:visited {
+   color: deepskyblue;
 }
