@@ -2,21 +2,21 @@ extends Shared/Layout.jade
 
 block content
     script(src='/socket.io/socket.io.js')
-    script(src='/js/login.js')
+    //script(src='/js/login.js')
 
     div#heading
         h1 Login
     br
     
-    form#loginForm<!--(id = "login", method="POST", action="/login")-->
-        label#userlabels(for='username') User Name
-        input(type='text')#username
-        br
-        label#passlabels(for='password') Password 
-        input(type='text')#password
-        br
-        //input(type="button", name="submit1" value = "Log In")#login
-        input(type="submit" name="submit" value="Log In")#login
+    //form#loginForm(name="userName")<!--(id = "login", method="POST", action="/login")
+    label#userlabels(for='username') User Name
+    input(type='text')#username
+    br
+    label#passlabels(for='password') Password 
+    input(type='password')#password
+    br
+    //input(type="button", name="submit1" value = "Log In")#login
+    button(name="submit")#login Login
 
     ///div
         div.inlineBlock#login
