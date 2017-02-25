@@ -1,4 +1,34 @@
 extends Shared/Layout.jade
 
 block content
-     h1 Sign Up
+    div#heading
+        h1 Register
+    br
+    div
+        div.inlineBlock#register
+            div
+                span#fName  First Name: 
+                input(type="text", value="")#name
+                label#nameErr
+            div
+                span#lName  Last Name: 
+                input(type="text", value="")#name
+                label#nameErr
+            div
+                span#uName  Username: 
+                input(type="text", value="")#name
+                label#nameErr
+            div
+                span#email  Email Address: 
+                input(type="email", value="")#name
+                label#nameErr
+            div
+                span#name  Password: 
+                input(type="password", value="")#pwd
+                label#pwdErr
+            div
+                span#name  Re-enter Password: 
+                input(type="password", value="")#pwd
+                label#pwdErr
+            div 
+                button.button.button1#btnLogin Register
