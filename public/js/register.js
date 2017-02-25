@@ -1,19 +1,55 @@
 function init(){
     function validateRegister() {
-        if (document.getElementById("name").value === "") {
-            document.getElementById("nameErr").innerHTML = "Requiered";
-            nameErr.style = "color:blue";
+        if (document.getElementById("fName").value === "") {
+            document.getElementById("fName").style = "background-color:#99ff99";
+            document.getElementById("fName").placeholder = "Requiered";
+        }
+        if (document.getElementById("lName").value === "") {
+            document.getElementById("lName").style = "background-color:#99ff99";
+            document.getElementById("lName").placeholder = "Requiered";
+        }
+        if (document.getElementById("uName").value === "") {
+            document.getElementById("uName").style = "background-color:#99ff99";
+            document.getElementById("uName").placeholder = "Requiered";
+        }
+        if (document.getElementById("email").value === "") {
+            document.getElementById("email").style = "background-color:#99ff99";
+            document.getElementById("email").placeholder = "Requiered";
         }
         if (document.getElementById("pwd").value === "") {
-            document.getElementById("pwdErr").innerHTML = "Requiered";
-            pwdErr.style = "color:blue";
+            document.getElementById("pwd").style = "background-color:#99ff99";
+            document.getElementById("pwd").placeholder = "Requiered";
         }
+        if (document.getElementById("rPwd").value === "") {
+            document.getElementById("rPwd").style = "background-color:#99ff99";
+            document.getElementById("rPwd").placeholder = "Requiered";
+        }
+
     }
 
-    function clearNameErr() {
-        document.getElementById("nameErr").innerHTML = "";
-        document.getElementById("name").value = "";
+    function clearFnameErr() {
+        document.getElementById("fNameErr").innerHTML = "";        
     }
+    function clearLnameErr() {
+        document.getElementById("lNameErr").innerHTML = "";        
+    }
+    function clearUnameErr() {
+        document.getElementById("uNameErr").innerHTML = "";        
+    }
+    function clearEmailErr() {
+        document.getElementById("emailErr").innerHTML = "";        
+    }
+    function clearPwdErr() {
+        document.getElementById("pwdErr").innerHTML = "";        
+    }
+    function clearRpwdErr() {
+        document.getElementById("rPwdErr").innerHTML = "";        
+    }
+
+   
+    
+
+
 
     function clearPwdErr() {
         document.getElementById("pwdErr").innerHTML = "";
@@ -22,8 +58,12 @@ function init(){
 
 
     $('#btnRegister').on('click', validateRegister);
-    $('#name').on('click', clearNameErr);
+    $('#fName').on('click', clearFnameErr);
+    $('#lName').on('click', clearLnameErr);
+    $('#uName').on('click', clearUnameErr);
+    $('#email').on('click', clearEmailErr);
     $('#pwd').on('click', clearPwdErr);
+    $('#rPwd').on('click', clearRpwdErr);
 
 
 }

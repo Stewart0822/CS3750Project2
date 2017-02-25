@@ -20,35 +20,43 @@ h1 {
 #heading {
     text-align: center;
 }
+#form{
+    
+}
 span#you {
     color: white;
     margin: 15px;
 }
 
-span#username {
+span#username, span#firstName, span#lastName, span#userName, span#emailAddress, span#pass, span#rPass  {
     color: white;
-    margin-right: 15px;
+    margin-right:auto;
+    
 }
 
-span#password {
+span#password, input#pwd,input#rPwd,input#fName, input#lName,input#uName, input#email {
     color: white;
     margin-right: 15px;
-    margin-left: 10px
+    margin-left: 30px;
+    
+    
 }
 
-input#name, #pwd, #rPwd, #fName, #lName, #uName, #email{
+input#name, input#pwd,input#rPwd,input#fName, input#lName,input#uName, input#email{
     width: 300px;
     margin: 8px 0;
     padding: 12px 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 textarea {
     resize: none;
 }
-
+.inlineBlock#register{
+    text-align: right;
+}
 .inlineBlock#login {
     display: inline-block;
     margin-top: 50px;

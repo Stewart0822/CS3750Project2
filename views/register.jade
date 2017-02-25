@@ -8,28 +8,22 @@ block content
     div
         div.inlineBlock#register
             div
-                span#fName  First Name: 
-                input(type="text", value="")#fName
-                label#nameErr
+                span#firstName  First Name:
+                input(type="text", value="" )#fName
             div
-                span#lName  Last Name: 
+                span#lastName Last Name:
+                input(type="text", value="" )#lName
+            div
+                span#userName  Username:   
                 input(type="text", value="")#uName
-                label#nameErr
             div
-                span#uName  Username: 
-                input(type="text", value="")#uName
-                label#nameErr
-            div
-                span#email  Email Address: 
+                span#emailAddress  Email: 
                 input(type="email", value="")#email
-                label#nameErr
             div
-                span#name  Password: 
+                span#pass  Password:
                 input(type="password", value="")#pwd
-                label#pwdErr
             div
-                span#name  Re-enter Password: 
+                span#rPass  Re-enter Password:
                 input(type="password", value="")#rPwd
-                label#pwdErr
             div 
                 button.button.button1#btnRegister Register

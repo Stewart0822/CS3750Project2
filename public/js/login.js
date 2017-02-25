@@ -46,7 +46,7 @@ function init() {
 
 
 
-    $('#register').on('click', loginUser);
+    $('#btnLogin').on('click', loginUser);
     $('#btnLogin').on('click', validateLogin);
     $('#name').on('click', clearNameErr);
     $('#pwd').on('click', clearPwdErr);
