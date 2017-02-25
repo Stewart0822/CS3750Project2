@@ -1,6 +1,7 @@
 extends Shared/Layout.jade
 
 block content
+    script(src='/js/register.js')
     div#heading
         h1 Register
     br
@@ -8,19 +9,19 @@ block content
         div.inlineBlock#register
             div
                 span#fName  First Name: 
-                input(type="text", value="")#name
+                input(type="text", value="")#fName
                 label#nameErr
             div
                 span#lName  Last Name: 
-                input(type="text", value="")#name
+                input(type="text", value="")#uName
                 label#nameErr
             div
                 span#uName  Username: 
-                input(type="text", value="")#name
+                input(type="text", value="")#uName
                 label#nameErr
             div
                 span#email  Email Address: 
-                input(type="email", value="")#name
+                input(type="email", value="")#email
                 label#nameErr
             div
                 span#name  Password: 
@@ -28,7 +29,7 @@ block content
                 label#pwdErr
             div
                 span#name  Re-enter Password: 
-                input(type="password", value="")#pwd
+                input(type="password", value="")#rPwd
                 label#pwdErr
             div 
-                button.button.button1#btnLogin Register
+                button.button.button1#btnRegister Register

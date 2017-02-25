@@ -1,5 +1,5 @@
 function init(){
-    function validateLogin() {
+    function validateRegister() {
         if (document.getElementById("name").value === "") {
             document.getElementById("nameErr").innerHTML = "Requiered";
             nameErr.style = "color:blue";
@@ -21,7 +21,9 @@ function init(){
     }
 
 
-
+    $('#btnRegister').on('click', validateRegister);
+    $('#name').on('click', clearNameErr);
+    $('#pwd').on('click', clearPwdErr);
 
 
 }
