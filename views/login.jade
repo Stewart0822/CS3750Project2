@@ -1,7 +1,7 @@
 extends Shared/Layout.jade
 
 block content
-
+    script(src='/js/login.js')
     div#heading
         h1 Login
     br
@@ -10,14 +10,19 @@ block content
             div
                 span#username User Name: 
                 input(type="text", value="")#name
+                label#nameErr
             br
             br
             br
             div
                 span#password Password:
-                input(type="text", value="******")#name
+                input(type="text", value="")#pwd
+                
+                label#pwdErr 
             br
             br
-            button.button.button1 Login
+            button.button.button1#btnLogin Login
             div#register
                 a(href="/Register", title="Register") Create New User
+        
+        
