@@ -22,7 +22,31 @@ function init() {
         document.getElementById("pwd").value = "";
     }
 
+    function sendMessage() {
+        var outgoingMessage = $('#outgoingMessage').val();
+        var name = $('#name').val();
+        $.ajax({
+            url: '/message',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({ message: outgoingMessage, name: name })
+        });
+    }
 
+    function loginUser() {
+        $.ajax({
+            url: '/Users/Register/NewUser',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({ name: 'Fred', password: 'Password', email: 'FredEmail' })
+        });
+    }
+
+
+
+    $('#register').on('click', loginUser);
     $('#btnLogin').on('click', validateLogin);
     $('#name').on('click', clearNameErr);
     $('#pwd').on('click', clearPwdErr);
