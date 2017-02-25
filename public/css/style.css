@@ -8,15 +8,13 @@ body {
 }
 
 h1 {
-    color: white;
+    color: cornflowerblue;
     margin-top: 25px;
-    border: 2px solid rgb(193, 193, 193);
     border-radius: 8px;
     padding: 10px 35px 10px 35px;
     width: 15%;
     margin-right: auto;
     margin-left: auto;
-    font-size: 20px;
 }
 
 #heading {
@@ -111,6 +109,22 @@ textarea {
     cursor: pointer;
 }
 
+h2 {
+    color: cornflowerblue;
+}
+
+h3 {
+    color: cornflowerblue;
+}
+
+h4 {
+    color: cornflowerblue;
+}
+
+p {
+    color: lightblue;
+}
+
 .button1 {
     background-color: white;
     color: black;
@@ -188,34 +202,34 @@ textarea {
 }
 
 #middleLogin {
-    align-self: center;
     height: 50px;
-    width: 240px;
+    width: 200px;
     border-radius: 10px;
     font-family: Arial, sans-serif;
     font-size: 1em;
     font-weight: bold;
-    margin-top: 25px;
 
 }
 
 #developers {
-    color: whitesmoke;
+    color: lightblue;
     height: 200px;
     width: 400px;
-    margin-top: 325px;
-    margin-left: 1px;
+    margin-left: 100px;
+    margin-top: 15px;
     font-family: Arial, sans-serif;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 10px; 
+
 }
 
 #about {
     color: whitesmoke;
-    width: 450px;
+    width: 400px;
     height: 200Px;
     float: left;
     margin-top: 15px;
+    margin-left: 100px;
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
@@ -224,32 +238,32 @@ textarea {
 #centerLoginCont {
     height: 100px;
     width: 250px;
-    float: left;
-    margin-top: 200px;
     font-family: Arial, sans-serif;
-    margin-left: 40px;
+    margin-left: 200px;
+    margin-top: 120px;
+    float: left;   
 }
 
 #aboutProjectDescription {
-    width: 98%;
+    width: 75%;
     height: 180px;
     font-family: Arial, sans-serif;
     color: whitesmoke;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 160px;
     margin-right: 10px;
+    
    
 }
 
 #aboutRequirements {
-    width: 98%;
-    height: 400px;
+    width:  75%;
+    height:1300px;
     color: whitesmoke;
-    border: 1px solid #ccc;
     font-family: Arial, sans-serif;
     color: whitesmoke;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 160px;
     margin-right: 10px;
 }
 
