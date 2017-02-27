@@ -30,14 +30,13 @@ block content
           br
           li
             a#mongodbLink(href='https://www.mongodb.com') MongoDb
-      blockquote
+
         h4 Website:   
-      blockquote
-        p
-          | For the actual website, you must have at least four pages. One will be the landing page just like last time.
-          | It will have links for logging in, as well as a short description of what the site is for (so that any user that happens upon it knows what they are getting into). You should then have a login page for handling the login requests, and finally a chat room page where users can communicate. Lastly, you should have a registration page so new users can join.   
+        blockquote
+            p
+                | For the actual website, you must have at least four pages. One will be the landing page just like last time.
+                | It will have links for logging in, as well as a short description of what the site is for (so that any user that happens upon it knows what they are getting into). You should then have a login page for handling the login requests, and finally a chat room page where users can communicate. Lastly, you should have a registration page so new users can join.   
       p    
-      blockquote
         h4 Registration:
       blockquote
         p
@@ -45,15 +44,19 @@ block content
         p
           | The username should be one word that allows alphanumeric characters, as well as the &ndash; and _ characters. Anything else that is put into that box should be considered invalid and rejected.    
         p
-          | The email address should follow standard email address rules, and the first and last name should just prohibit being blank. The password should be at least 6 characters, but no other rules should be imposed other than that. I recommend checking the criteria both on the browser side and the server side. Browser-side so that the user doesn&rsquo;t have to wait before realizing they&rsquo;ve made a mistake, and server side so they don&rsquo;t just bypass your security.
+            | The email address should follow standard email address rules, and the first and last name should just prohibit being blank. The password should be at least 6 characters, but no other rules should be imposed other than that. I recommend checking the criteria both on the browser side and the server side. Browser-side so that the user doesn&rsquo;t have to wait before realizing they&rsquo;ve made a mistake, and server side so they don&rsquo;t just bypass your security.
         p
-          | Obviously the password and confirm password should match before allowing the user to register, but only store the password (not both). It is bad practice to store the password as plain text in your database, but for this project I&rsquo;m not concerned with that. If you choose to encrypt your passwords like you would in production, the bcrypt library is perfect for this. You&rsquo;ll need to see the very simple example on the bcrypt page for how to integrate it with Mongoose.     
+            | Obviously the password and confirm password should match before allowing the user to register, but only store the password (not both). It is bad practice to store the password as plain text in your database, but for this project I&rsquo;m not concerned with that. If you choose to encrypt your passwords like you would in production, the bcrypt library is perfect for this. You&rsquo;ll need to see the very simple example on the bcrypt page for how to integrate it with Mongoose.     
         p
-          | If there are errors, show them at the top of the screen above where the user information fields are. If the user has somehow submitted the page and you find the errors on the server, return the user to the register page and display the errors that were found. All fields that have errors should show error messages, not just one at a time (e.g. if I put in a bad password and a bad screen name, I should see both those errors, not just the password or just the bad screen name).    
+            | If there are errors, show them at the top of the screen above where the user information fields are. If the user has somehow submitted the page and you find the errors on the server, return the user to the register page and display the errors that were found. All fields that have errors should show error messages, not just one at a time (e.g. if I put in a bad password and a bad screen name, I should see both those errors, not just the password or just the bad screen name).    
+      p      
         h4 Login Page:    
+      blockquote
         p
           | The login page can also be very simple, just fields for the email and the password. When the user submits the page, you should check that the user exists and that the password matches. If not, take the user back to the login page and display the error that the screen name or password does not match. Do not inform the user which of the two was wrong or that the user doesn&rsquo;t exist, simply state that things don&rsquo;t match.   
+      p
         h4 Chat Page:    
+      blockquote
         p
           | This should be a single page with two parts. One part should show all the messages that have been entered, and the other should be a simple message box with a submit button. When the user types in a message and hits the submit button, it should send the message to the server. This should then broadcast the message to everyone else, and it should then show up in the messages area. It should also show up for the user that sent it, but the broadcast functionality of Socket.IO will not do this for you. You should simply take the message and append it to the list of messages that have been shown.   
         p
