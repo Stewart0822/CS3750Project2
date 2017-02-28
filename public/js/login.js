@@ -34,19 +34,9 @@ function init() {
         });
     }
 
-    function loginUser() {
-        $.ajax({
-            url: '/Users/Register/NewUser',
-            type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({ name: 'Fred', password: 'Password', email: 'FredEmail' })
-        });
+    
     }
-
-
-
-    $('#btnLogin').on('click', loginUser);
+  
     $('#btnLogin').on('click', validateLogin);
     $('#name').on('click', clearNameErr);
     $('#pwd').on('click', clearPwdErr);
