@@ -1,20 +1,20 @@
 body {
-    margin: 0px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     font-family: Arial, sans-serif;
     text-align: center;
     background-color:#303030;
+    background-image: url(material.jpg);
 }
 
 h1 {
-    color: white;
+    color: cornflowerblue;
     margin-top: 25px;
-    border: 2px solid rgb(193, 193, 193);
     border-radius: 8px;
     padding: 10px 35px 10px 35px;
     width: 15%;
     margin-right: auto;
     margin-left: auto;
-    font-size: 20px;
 }
 
 #heading {
@@ -117,11 +117,6 @@ textarea {
     margin-top: 20px;
 }
 
-ul {
-    text-align: center;
-    margin:10px;
-    padding: 0px;
-}
 
 #nav_wrapper a:hover {
     color: #00ffad;
@@ -140,6 +135,22 @@ ul {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+h2 {
+    color: cornflowerblue;
+}
+
+h3 {
+    color: cornflowerblue;
+}
+
+h4 {
+    color: cornflowerblue;
+}
+
+p {
+    color: lightblue;
 }
 
 .button1 {
@@ -210,6 +221,88 @@ ul {
     position: absolute;
     width:100%;
     bottom: 5px;
+}
+
+#topSubmit {
+    float: right;
+    width: 75px;
+    height: 28px;
+    border-radius: 10px;
+    padding-top: 1px;
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#middleLogin {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+#developers {
+    color: lightblue;
+    height: 200px;
+    width: 400px;
+    margin-left: 100px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    padding-left: 10px; 
+
+}
+
+#about {
+    color: whitesmoke;
+    width: 400px;
+    height: 200Px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 100px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#centerLoginCont {
+    height: 100px;
+    width: 250px;
+    font-family: Arial, sans-serif;
+    margin-left: 200px;
+    margin-top: 120px;
+    float: left;   
+}
+
+#aboutProjectDescription {
+    width: 75%;
+    height: 180px;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 160px;
+    margin-right: 10px;
+    
+   
+}
+
+#aboutRequirements {
+    width:  75%;
+    height:1300px;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 160px;
+    margin-right: 10px;
+}
+
+.aboutRequirements-div a:link, .aboutRequirements-div a:visited {
+   color: deepskyblue;
 }
 
 #userlabels {
