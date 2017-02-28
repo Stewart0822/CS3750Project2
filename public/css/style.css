@@ -25,34 +25,38 @@ span#you {
     margin: 15px;
 }
 
-span#username, span#firstName, span#lastName, span#userName, span#emailAddress, span#pass, span#rPass  {
+span#username, span#firstName, span#lastName, span#userName, span#username {
     color: white;
-    margin-right:auto;
+    margin-right:5px;
     min-width: 125px;
     width: 125px;
-    background-color: blue;
-    
-}
+} 
 
 span#emailAddress {
+    color: white;
+    margin-right:5px;
     margin-left: 31px;
 }
 
 span#pass {
+    color: white;
+    margin-right:5px;
     margin-left: 5px;
 }
 
 span#rPass {
+    color: white;
+    margin-right:5px;
     margin-left: -63px;
 }
 
-span#password, input#pwd, input#rPwd, input#fName, input#lName,input#uName, input#email {
+span#password{
     color: white;
     margin-right: 15px;
        
 }
 
-input#name, input#pwd,input#rPwd,input#fName, input#lName,input#uName, input#email{
+input#name, input#pwd, input#rPwd, input#fName, input#lName, input#uName, input#email{
     width: 300px;
     margin: 8px 0;
     padding: 12px 20px;
