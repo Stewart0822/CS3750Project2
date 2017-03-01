@@ -115,11 +115,11 @@ function init() {
 
 
     function registerUser() {
-        var fname = document.getElementById("fName");
-        var lname = document.getElementById("lName");
-        var uname = document.getElementById("uName");
-        var email = document.getElementById("email");
-        var pass = document.getElementById("pwd");
+        var fname = document.getElementById("fName").value;
+        var lname = document.getElementById("lName").value;
+        var uname = document.getElementById("uName").value;
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("pwd").value;
         $.ajax({
             url: '/Users/Register/NewUser',
             type: 'POST',
