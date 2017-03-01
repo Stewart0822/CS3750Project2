@@ -7,7 +7,7 @@ function init() {
         var userNameRegex = /^[a-zA-Z0-9]+$/;
         var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         var firstNameInput = $('#fName').val();
-        var lastNameInput = $('lName').val();
+        var lastNameInput = $('#lName').val();
         var userNameInput = $('#uName').val();
         var passwordInput = $('#pwd').val();
         var emailInput = $('#email').val();
