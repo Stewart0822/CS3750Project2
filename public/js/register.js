@@ -170,10 +170,7 @@ function init() {
     $('#email').on('focus', clearEmailErr);
     $('#pwd').on('focus', clearPwdErr);
     $('#rPwd').on('focus', clearRpwdErr);
-    //-----------------------------------------------------------------------------
-    //$('#login').on('click', registerUser);
-    //$('#btnRegister').on('click', validateForm);
-    $('#fName').on('keydown', handleEnterKey);
-    $('#lName').on('keydown', handleEnterKey);
+    // $('#fName').on('keydown', handleEnterKey);
+    // $('#lName').on('keydown', handleEnterKey);
 }
 $(document).on('ready', init);
