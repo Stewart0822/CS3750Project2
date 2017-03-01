@@ -3,8 +3,7 @@ body {
     margin-bottom: 0px;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color:#303030;
-    background-image: url(material.jpg);
+    background-color: #303030;
 }
 
 h1 {
@@ -20,21 +19,26 @@ h1 {
 #heading {
     text-align: center;
 }
+
 span#you {
     color: white;
     margin: 15px;
 }
 
-span#username, span#firstName, span#lastName, span#userName, span#username {
+span#username,
+span#firstName,
+span#lastName,
+span#userName,
+span#username {
     color: white;
-    margin-right:5px;
+    margin-right: 5px;
     min-width: 125px;
     width: 125px;
-} 
+}
 
 span#emailAddress {
     color: white;
-    margin-right:5px;
+    margin-right: 5px;
     margin-left: 31px;
 }
 
@@ -60,29 +64,34 @@ span#firstname {
 
 span#repassword {
     color: white;
-    margin-right:5px;
+    margin-right: 5px;
     margin-left: 5px;
 }
 
 span#rPass {
     color: white;
-    margin-right:5px;
+    margin-right: 5px;
     margin-left: -63px;
 }
 
-span#password{
+span#password {
     color: white;
     margin-right: 15px;
-       
 }
 
-input#name, input#pwd, input#rPwd, input#fName, input#lName, input#uName, input#email{
+input#name,
+input#pwd,
+input#rPwd,
+input#fName,
+input#lName,
+input#uName,
+input#email {
     width: 300px;
     margin: 8px 0;
     padding: 12px 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 input#repassname {
@@ -97,9 +106,11 @@ input#repassname {
 textarea {
     resize: none;
 }
-.inlineBlock#register{
+
+.inlineBlock#register {
     text-align: center;
 }
+
 .inlineBlock#login {
     display: inline-block;
     margin-top: 50px;
@@ -108,7 +119,6 @@ textarea {
 .topAligned {
     vertical-align: top;
 }
-
 
 #nav {
     width: 100%;
@@ -128,25 +138,24 @@ textarea {
 }
 
 #nav_wrapper ul li {
-    list-style:none;
+    list-style: none;
     display: inline;
     font-weight: bold;
     padding: 100px;
 }
 
-#nav_wrapper a{
+#nav_wrapper a {
     color: white;
     text-decoration: none;
     margin-top: 20px;
 }
-
 
 #nav_wrapper a:hover {
     color: #00ffad;
 }
 
 .button {
-    background-color:#377D7A;
+    background-color: #377D7A;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -194,55 +203,55 @@ p {
     color: white;
     border-color: red;
 }
+
 #register {
     margin-top: 15px;
 }
+
 #register a {
     margin-top: 5px;
     color: white;
 }
 
-
-#chat{
+#chat {
     margin: auto;
-    width:90%;
-    height:450px;
+    width: 90%;
+    height: 450px;
     min-height: 450px;
-    background-color:black;
-    position:relative;
+    background-color: black;
+    position: relative;
 }
 
-#messages{
-    width:85%;
-    color:white;
+#messages {
+    width: 85%;
+    color: white;
     overflow-y: auto;
-    text-align:left;
-    height:420px;
-    max-height:420px;
+    text-align: left;
+    height: 420px;
+    max-height: 420px;
     overflow-wrap: break-word;
-    
-    float:left;
+    float: left;
 }
 
 .party {
     background-color: black;
-    color:white;
-    width:14%;
-    margin:auto;
-    float:right;
+    color: white;
+    width: 14%;
+    margin: auto;
+    float: right;
 }
 
-.rightPane{
-    float:right;
+.rightPane {
+    float: right;
 }
 
-.leftPane{
-    float:right;
+.leftPane {
+    float: right;
 }
 
-#messageForm{
+#messageForm {
     position: absolute;
-    width:100%;
+    width: 100%;
     bottom: 5px;
 }
 
@@ -265,7 +274,6 @@ p {
     font-family: Arial, sans-serif;
     font-size: 1em;
     font-weight: bold;
-
 }
 
 #developers {
@@ -276,8 +284,7 @@ p {
     margin-top: 15px;
     font-family: Arial, sans-serif;
     text-align: left;
-    padding-left: 10px; 
-
+    padding-left: 10px;
 }
 
 #about {
@@ -298,7 +305,7 @@ p {
     font-family: Arial, sans-serif;
     margin-left: 200px;
     margin-top: 120px;
-    float: left;   
+    float: left;
 }
 
 #aboutProjectDescription {
@@ -309,13 +316,11 @@ p {
     text-align: left;
     margin-left: 160px;
     margin-right: 10px;
-    
-   
 }
 
 #aboutRequirements {
-    width:  75%;
-    height:1300px;
+    width: 75%;
+    height: 1300px;
     color: whitesmoke;
     font-family: Arial, sans-serif;
     color: whitesmoke;
@@ -324,11 +329,12 @@ p {
     margin-right: 10px;
 }
 
-.aboutRequirements-div a:link, .aboutRequirements-div a:visited {
-   color: deepskyblue;
+.aboutRequirements-div a:link,
+.aboutRequirements-div a:visited {
+    color: deepskyblue;
 }
 
-.bananna  {
+.bananna {
     color: deepskyblue;
 }
 
@@ -346,13 +352,11 @@ p {
 #username {
     margin: 10px;
     border-radius: 5px;
-  
 }
 
 #password {
     margin: 10px;
     border-radius: 5px;
-   
 }
 
 #login {
