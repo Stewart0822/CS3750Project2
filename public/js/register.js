@@ -7,7 +7,7 @@ function init() {
         var userNameRegex = /^[a-zA-Z0-9]+$/;
         var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         var firstNameInput = $('#fName').val();
-        var lastNameInput = $('lName').val();
+        var lastNameInput = $('#Name').val();
         var userNameInput = $('#uName').val();
         var passwordInput = $('#pwd').val();
         var emailInput = $('#email').val();
@@ -131,16 +131,25 @@ function init() {
                 lastname: lname,
                 password: pass,
                 email: email
-            })
+            }),
+            success: function(data, textStatus, jqXHR) {
+                //should probably display something that says it was successful
+                console.log("created");
+                window.location = '../Users/Login';
+            },
+            error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
+                console.log(err);
+            }
         });
     }
 
-    /*$('#register').on('click', registerUser);
-    function handleEnterKey(event){
-         if (event.keyCode == 13) {
+    //$('#register').on('click', registerUser);
+
+    function handleEnterKey(event) {
+        if (event.keyCode == 13) {
             validateRegister();
         }
-    }*/
+    }
 
 
     $('#btnRegister').on('click', validateRegister);

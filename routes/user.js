@@ -23,15 +23,27 @@ module.exports = function(User) {
     });
 
     router.post("/Users/Register/NewUser", function(request, response, next) {
-        var anewone = new User;
-        anewone.name = request.body.name;
-        anewone.firstname = request.body.firstname;
-        anewone.lastname = request.body.lastname;
-        anewone.password = request.body.password;
-        anewone.email = request.body.email;
-        console.log(anewone);
-        anewone.save();
-        //redirect to login page
+        let exists = false;
+        doesUserExist(request.body.name, function(err, user) {
+            if (user) {
+                response.status(409).json({ message: "Username Taken" }); //Changed these out to status codes
+
+            } else {
+                var anewone = new User;
+                anewone.name = request.body.name;
+                anewone.normalized = request.body.name.toLowerCase();
+                anewone.firstname = request.body.firstname;
+                anewone.lastname = request.body.lastname;
+                anewone.password = request.body.password;
+                anewone.email = request.body.email;
+                //console.log(anewone);
+                anewone.save();
+                response.status(201).json({ message: "User Created" });
+            }
+        });
+        if (!exists) {
+
+        }
     });
 
 
@@ -62,7 +74,7 @@ module.exports = function(User) {
         if (!module.parent) console.log('auth');
 
         User.findOne({
-                name: name
+                normalized: name.toLowerCase()
             },
             //this right here is where it needs (user), but I'm not understanding how that can be "true" and run the pass==user.password
             function(err, user) {
@@ -75,6 +87,20 @@ module.exports = function(User) {
                 } else {
                     //console.log("here1?")
                     return fn(new Error('cannot find user'));
+                }
+            });
+    }
+
+    function doesUserExist(name, fn) {
+        User.findOne({
+                normalized: name.toLowerCase()
+            },
+            function(err, user) {
+                if (user) {
+                    return fn(null, user)
+                } else {
+
+                    return fn(new Error('gtg'));
                 }
             });
     }
