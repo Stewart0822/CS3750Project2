@@ -23,7 +23,20 @@ module.exports = function(User) {
     });
 
     router.post("/Users/Register/NewUser", function(request, response, next) {
-        let exists = false;
+
+        //validate bad info isn't comming to this point somehow
+        var firstNameRegex = /^[a-zA-Z]+$/;
+        var lastNameRegex = /^[a-zA-Z]+$/;
+        var userNameRegex = /^[a-zA-Z0-9]+$/;
+        var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        if (!userNameRegex.test(request.body.name) || request.body.name == undefined ||
+            !firstNameRegex.test(request.body.firstname) || request.body.firstname == undefined ||
+            !lastNameRegex.test(request.body.lastname) || request.body.lastname == undefined ||
+            request.body.password == undefined
+        ) {
+            response.status(400).json({ message: "Bad Request" });
+        }
+
         doesUserExist(request.body.name, function(err, user) {
             if (user) {
                 response.status(409).json({ message: "Username Taken" }); //Changed these out to status codes
@@ -41,9 +54,6 @@ module.exports = function(User) {
                 response.status(201).json({ message: "User Created" });
             }
         });
-        if (!exists) {
-
-        }
     });
 
 
