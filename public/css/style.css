@@ -359,7 +359,8 @@ p {
     border-radius: 5px;
 }
 
-#login {
+#btnLogin,
+#btnRegister{
     margin: 10px;
     border-radius: 3px;
     padding-right: 10px;
