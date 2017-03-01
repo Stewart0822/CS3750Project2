@@ -1,41 +1,29 @@
 extends Shared/Layout.jade
 
 block content
-<<<<<<< HEAD
     script(src='/js/register.js')
-    h1 Sign Up
-    button.button#register
-=======
-    
     div#heading
-        h1 Sign Up
+        h1 Register
     br
     div
-        div.inlineBlock#login
+        div.inlineBlock#register
             div
-                span#username User Name: 
-                input(type="text", value="")#name
-            br
+                span#firstName  First Name:
+                input(type="text", value="" )#fName
             div
-                span#firstname First Name:
-                input(type="text", value="")#name
-            br
+                span#lastName Last Name:
+                input(type="text", value="" )#lName
             div
-                span#lastname Last Name: 
-                input(type="text", value="")#name
-            br
+                span#userName  Username:   
+                input(type="text", value="")#uName
             div
-                span#email Email:
-                input(type="text", value="")#name
-            br
+                span#emailAddress  Email: 
+                input(type="email", value="")#email
             div
-                span#password Password: 
-                input(type="text", value="")#name
-            br
+                span#pass  Password:
+                input(type="password", value="")#pwd
             div
-                span#repassword Confirm Password:
-                input(type="text", value="")#repassname
-            br
-            button.button.button1 Create User
-            button.button.button1#cancel Cancel
->>>>>>> MoD
+                span#rPass  Re-enter Password:
+                input(type="password", value="")#rPwd
+            div 
+                button.button.button1#btnRegister Register

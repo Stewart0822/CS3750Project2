@@ -25,12 +25,20 @@ span#you {
     margin: 15px;
 }
 
-span#username {
+span#username, span#firstName, span#lastName, span#userName, span#username {
     color: white;
-    margin-right: 15px;
+    margin-right:5px;
+    min-width: 125px;
+    width: 125px;
+} 
+
+span#emailAddress {
+    color: white;
+    margin-right:5px;
+    margin-left: 31px;
 }
 
-span#password {
+span#pass {
     color: white;
     margin-right: 25px;
 }
@@ -52,16 +60,29 @@ span#firstname {
 
 span#repassword {
     color: white;
-    margin-right: 15px;
+    margin-right:5px;
+    margin-left: 5px;
 }
 
-input#name {
+span#rPass {
+    color: white;
+    margin-right:5px;
+    margin-left: -63px;
+}
+
+span#password{
+    color: white;
+    margin-right: 15px;
+       
+}
+
+input#name, input#pwd, input#rPwd, input#fName, input#lName, input#uName, input#email{
     width: 300px;
     margin: 8px 0;
     padding: 12px 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 input#repassname {
@@ -76,7 +97,9 @@ input#repassname {
 textarea {
     resize: none;
 }
-
+.inlineBlock#register{
+    text-align: center;
+}
 .inlineBlock#login {
     display: inline-block;
     margin-top: 50px;

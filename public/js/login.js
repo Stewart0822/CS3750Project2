@@ -1,5 +1,53 @@
+//login.jade//
 function init() {
 
+    function validateLogin() {
+        
+        var userNameRegex = /^[a-zA-Z0-9]+$/;
+        var userNameInput = $('#name').val();
+        var passwordInput = $('#pwd').val();
+        var userresult = userNameRegex.test(userNameInput);
+        var passresult = userNameRegex.test(passwordInput);
+
+        if (document.getElementById("name").value === "" || userresult == false) {
+            if(document.getElementById("name").value === ""){
+                document.getElementById("name").style = "background-color:#99ff99";
+                document.getElementById("name").placeholder = "Requiered";
+            }
+            else{
+               document.getElementById("name").value = "";
+               document.getElementById("name").style = "background-color:#99ff99";
+               document.getElementById("name").placeholder = "Invalid Username";
+            }
+        
+        }
+        if (document.getElementById("pwd").value === "" || emailresult == false) {
+            if(document.getElementById("pwd").value === ""){
+                document.getElementById("pwd").style = "background-color:#99ff99";
+                document.getElementById("pwd").placeholder = "Requiered";
+            }
+        }
+        
+    }
+    function clearNameErr() {
+        document.getElementById("name").placeholder = "";
+        document.getElementById('name').style = "background-color:#ffffff";     
+    }
+    function clearPwdErr() {
+       document.getElementById("pwd").placeholder = "";
+       document.getElementById('pwd').style = "background-color:#ffffff"; 
+    }
+
+    
+    
+  
+    $('#btnLogin').on('click', validateLogin);
+    $('#name').on('focus', clearNameErr);
+    $('#pwd').on('focus', clearPwdErr);
+}
+
+
+$(document).on('ready', init);
     function loginNow() {
         var username = $('#username').val();
         var password = $('#password').val();
@@ -19,61 +67,11 @@ function init() {
         });
     }
 
-    function logoutNow() {
-        $.ajax({
-            url: '/Users/logout',
-            type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({}),
-            success: function(data, textStatus, jqXHR) {
-                window.location = '../'
-            }
-        });
-    }  
-
-    function validateForm(event){
-        var userNameRegex = /^[a-zA-Z0-9]+$/;
-        var userNameInput = $('#username').val();
-        var passwordInput = $('#password').val();
-        var userresult = userNameRegex.test(userNameInput);
-        var passresult = userNameRegex.test(passwordInput);
-        //var validUsername = document.frm.userName.username.match(userNameRegex);
-        if(userresult == false && passresult == true){
-            alert("Your user name is not valid.\nOnly include letters or numbers");
-            //document.frm.userName.focus();
-        }
-        else if(userresult == false && passresult == false) {
-            alert("Your user name and password are not valid.\nOnly include letters or numbers");
-        }
-        else if(passresult == false && userresult == true) {
-            alert("Your password is not valid.\nOnly include letters or numbers.");
-        }
-        else {
-            loginNow();
-        }
-
-    }
-
     function handleEnterKey(e){
          if (e.keyCode == 13) {
             validateForm();
         }
     }
-    //$('#login').on('click', validateForm)
-    //if (validateForm() == false) {
-
-    //}
-    //else {
-        //$('#login').on('click', loginNow)
-        //$('#logout').on('click', logoutNow)
-    //}
-     //('#login').on('click', loginNow)
      $('#login').on('click', loginNow);
-     $('#logout').on('click', logoutNow);
-     $('#login').on('click', validateForm);
      $("#username").keydown(handleEnterKey);
      $("#password").keydown(handleEnterKey);
-}
-
-$(document).on('ready', init);
