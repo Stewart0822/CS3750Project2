@@ -94,32 +94,31 @@ function init(){
        document.getElementById("rPwd").placeholder = "";
        document.getElementById('rPwd').style = "background-color:#ffffff";       
     }
-    // function registerNow(){
-    //     var firstname = $('#fName').val();
-    //     var lastname = $('#lName').val(); 
-    //     var password = $('#pwd').val();
-    //     var username = $('#uName').val();
-    //     $.ajax({
-    //         url: '/Users/register',
-    //         type: 'POST',
-    //         contentType: 'application/json',
-    //         dataType: 'json',
-    //         data: JSON.stringify({ fisrtname: fName, lastname: lName, username: username, password: password }),
-    //         success: function(data, textStatus, jqXHR) {
-    //             window.location = '../chat';
-    //         },
-    //         error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code. Need to know error codes :)
-    //             console.log(err);
-    //         }
-    //     });
-    // }
     function handleEnterKey(event){
          if (event.keyCode == 13) {
             validateRegister();
         }
     }
-
- 
+    function registerNow(){
+        var firstname = $('#fName').val();
+        var lastname = $('#lName').val(); 
+        var password = $('#pwd').val();
+        var username = $('#uName').val();
+        $.ajax({
+            url: '/Users/register',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({ fisrtname: fName, lastname: lName, username: username, password: password }),
+            success: function(data, textStatus, jqXHR) {
+                window.location = '../chat';
+            },
+            error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code. Need to know error codes :)
+                console.log(err);
+            }
+        });
+    }
+   
     $('#btnRegister').on('click', validateRegister);
     $('#fName').on('focus', clearFnameErr);
     $('#lName').on('focus', clearLnameErr);
@@ -127,9 +126,7 @@ function init(){
     $('#email').on('focus', clearEmailErr);
     $('#pwd').on('focus', clearPwdErr);
     $('#rPwd').on('focus', clearRpwdErr);
-    //-----------------------------------------------------------------------------
-    $('#login').on('click', registerNow);
-    //$('#btnRegister').on('click', validateForm);
+    $('#uName').on('blur', registerNow);
     $('#fName').on('keydown', handleEnterKey);
     $('#lName').on('keydown',handleEnterKey);
 }

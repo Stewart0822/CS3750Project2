@@ -4,7 +4,6 @@ body {
     text-align: center;
     background-color:#303030;
 }
-
 h1 {
     color: white;
     margin-top: 25px;
@@ -16,7 +15,6 @@ h1 {
     margin-left: auto;
     font-size: 20px;
 }
-
 #heading {
     text-align: center;
 }
@@ -24,38 +22,32 @@ span#you {
     color: white;
     margin: 15px;
 }
-
 span#username, span#firstName, span#lastName, span#userName, span#username {
     color: white;
     margin-right:5px;
     min-width: 125px;
     width: 125px;
 } 
-
 span#emailAddress {
     color: white;
     margin-right:5px;
     margin-left: 31px;
 }
-
 span#pass {
     color: white;
     margin-right:5px;
     margin-left: 5px;
 }
-
 span#rPass {
     color: white;
     margin-right:5px;
     margin-left: -63px;
 }
-
 span#password{
     color: white;
     margin-right: 15px;
        
 }
-
 input#name, input#pwd, input#rPwd, input#fName, input#lName, input#uName, input#email{
     width: 300px;
     margin: 8px 0;
@@ -64,7 +56,6 @@ input#name, input#pwd, input#rPwd, input#fName, input#lName, input#uName, input#
     border-radius: 4px;
     box-sizing: border-box;    
 }
-
 textarea {
     resize: none;
 }
@@ -75,23 +66,19 @@ textarea {
     display: inline-block;
     margin-top: 50px;
 }
-
 .topAligned {
     vertical-align: top;
 }
-
 .party {
     background-color: red;
     margin-left: 50px;
 }
-
 #nav {
     width: 100%;
     height: 110px;
     background: url(images/material.jpg);
     background-size: cover;
 }
-
 #nav_wrapper {
     height: 40px;
     width: 100%;
@@ -101,30 +88,25 @@ textarea {
     margin-top: 75px;
     position: absolute;
 }
-
 #nav_wrapper ul li {
     list-style:none;
     display: inline;
     font-weight: bold;
     padding: 100px;
 }
-
 #nav_wrapper a{
     color: white;
     text-decoration: none;
     margin-top: 20px;
 }
-
 ul {
     text-align: center;
     margin:10px;
     padding: 0px;
 }
-
 #nav_wrapper a:hover {
     color: #00ffad;
 }
-
 .button {
     background-color:#377D7A;
     border: none;
@@ -139,7 +121,6 @@ ul {
     transition-duration: 0.4s;
     cursor: pointer;
 }
-
 .button1 {
     background-color: white;
     color: black;
@@ -147,7 +128,6 @@ ul {
     border-radius: 15px;
     padding: 10px 30px 10px 30px;
 }
-
 .button1:hover {
     background-color: #377D7A;
     color: white;
