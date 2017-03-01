@@ -21,6 +21,7 @@ function init() {
         var uname = document.getElementById("uName");
         var email = document.getElementById("email");
         var pass = document.getElementById("pwd");
+        var rpass = document.getElementById("rPwd");
         var continueLogin = true;
 
         if (fname.value === "" || fnameresult == false) {
@@ -67,10 +68,27 @@ function init() {
                 email.placeholder = "Invalid Email Address";
             }
         }
-        if (pass.value === "") {
+        if (pass.value === "" || (pass.value != rpass.value)) {
             continueLogin = false;
-            pass.style = "background-color:#99ff99";
-            pass.placeholder = "Required";
+            if (pass.value === "") {
+                pass.style = "background-color:#99ff99";
+                pass.placeholder = "Required";
+            } else {
+                pass.value = "";
+                pass.style = "background-color:#99ff99";
+                pass.placeholder = "Passwords Do Not Match";
+            }
+        }
+        if (rpass.value === "" || (pass.value != rpass.value)) {
+            continueLogin = false;
+            if (rpass.value === "") {
+                rpass.style = "background-color:#99ff99";
+                rpass.placeholder = "Required";
+            } else {
+                rpass.value = "";
+                rpass.style = "background-color:#99ff99";
+                rpass.placeholder = "Passwords Do Not Match";
+            }
         }
 
 
@@ -159,10 +177,7 @@ function init() {
     $('#email').on('focus', clearEmailErr);
     $('#pwd').on('focus', clearPwdErr);
     $('#rPwd').on('focus', clearRpwdErr);
-    //-----------------------------------------------------------------------------
-    //$('#login').on('click', registerUser);
-    //$('#btnRegister').on('click', validateForm);
-    $('#fName').on('keydown', handleEnterKey);
-    $('#lName').on('keydown', handleEnterKey);
+    // $('#fName').on('keydown', handleEnterKey); 
+    // $('#lName').on('keydown', handleEnterKey); 
 }
 $(document).on('ready', init);

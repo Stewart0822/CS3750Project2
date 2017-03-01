@@ -44,7 +44,7 @@ span#emailAddress {
 
 span#pass {
     color: white;
-    margin-right: 25px;
+    margin-right: 12px;
 }
 
 span#lastname {
@@ -359,7 +359,8 @@ p {
     border-radius: 5px;
 }
 
-#login {
+#btnLogin,
+#btnRegister {
     margin: 10px;
     border-radius: 3px;
     padding-right: 10px;
