@@ -65,8 +65,14 @@ function init() {
             success: function(data, textStatus, jqXHR) {
                 window.location = '../chat';
             },
-            error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
-                console.log(err);
+            error: function(err) { 
+                if(err.responseJSON.message == "Invalid Login Details Supplied"){
+                    $('#name,#pwd').val("");
+                    document.getElementById("name").style = "background-color:#ff0000";
+                    document.getElementById("name").placeholder = "LOGIN INVALID";
+                    document.getElementById("pwd").style = "background-color:#ff0000";
+                    document.getElementById("pwd").placeholder = "Please, try again.";
+                }
             }
 
         });
