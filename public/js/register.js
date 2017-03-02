@@ -161,9 +161,9 @@ function init() {
                 email: email
             }),
             success: function(data, textStatus, jqXHR) {
-                //should probably display something that says it was successful
+                modalDisplay();
                 console.log("created");
-                window.location = '../Users/Login';
+                //window.location = '../Users/Login';
             },
             error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
                 if(err.responseJSON.message == "Username Taken"){
@@ -176,6 +176,28 @@ function init() {
     }
 
     //$('#register').on('click', registerUser);
+
+    function modalDisplay(){
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+        var delayMillis = 3000; //3 second
+        
+        //open the modal 
+        modal.style.display = "block";
+        setTimeout(function(){window.location = '../Users/Login'}, delayMillis);    
+
+        // // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        // }
+
+        // // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+    }
 
     function handleEnterKey(event) {
         if (event.keyCode == 13) {
