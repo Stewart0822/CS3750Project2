@@ -73,16 +73,16 @@ function init() {
             if (pass.value === "") {
                 pass.style = "background-color:#99ff99";
                 pass.placeholder = "Required";
-            } else {
-                if(pass.value.length < 6)
-                {
+            } 
+            else if(pass.value.length < 6){
                     pass.value = "";
                     pass.style = "background-color:#99ff99";
                     pass.placeholder = "Password too short. 6 characters minimum.";
                     rpass.value = "";
                     rpass.style = "background-color:#99ff99";
                     rpass.placeholder = "Password too short. 6 characters minimum.";
-                }
+            }
+            else{
                 pass.value = "";
                 pass.style = "background-color:#99ff99";
                 pass.placeholder = "Passwords Do Not Match";
@@ -93,8 +93,9 @@ function init() {
             continueLogin = false;
             if (rpass.value === "") {
                 rpass.style = "background-color:#99ff99";
-                rpass.placeholder = "Required";
-            } else {
+                rpass.placeholder = "Required";            
+            }
+            else {
                 rpass.value = "";
                 rpass.style = "background-color:#99ff99";
                 rpass.placeholder = "Passwords Do Not Match";
