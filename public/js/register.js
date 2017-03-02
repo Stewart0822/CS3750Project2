@@ -156,7 +156,11 @@ function init() {
                 window.location = '../Users/Login';
             },
             error: function(err) { //On Error will need to popup banner that there was an error. from Adam's code
-                console.log(err);
+                if(err.responseJSON.message == "Username Taken"){
+                    document.getElementById("uName").value = "";
+                    document.getElementById("uName").style = "background-color:#99ff99";
+                    document.getElementById("uName").placeholder = "Username Unavailable";
+                }
             }
         });
     }
