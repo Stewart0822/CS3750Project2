@@ -53,7 +53,7 @@ function init() {
 
 
     function loginNow() {
-        console.log("here");
+
         var username = $('#name').val();
         var password = $('#pwd').val();
         $.ajax({
@@ -65,14 +65,14 @@ function init() {
             success: function(data, textStatus, jqXHR) {
                 window.location = '../chat';
             },
-            error: function(err) { 
-                if(err.responseJSON.message == "Invalid Login Details Supplied"){
-                    $('#name,#pwd').val("");
-                    document.getElementById("name").style = "background-color:#ff0000";
-                    document.getElementById("name").placeholder = "LOGIN INVALID";
-                    document.getElementById("pwd").style = "background-color:#ff0000";
-                    document.getElementById("pwd").placeholder = "Please, try again.";
-                }
+            error: function(err) {
+                //if (err.responseJSON.message == "Invalid Login Details Supplied") { //does not work in Edge browser
+                $('#name,#pwd').val("");
+                document.getElementById("name").style = "background-color:#ff0000";
+                document.getElementById("name").placeholder = "LOGIN INVALID";
+                document.getElementById("pwd").style = "background-color:#ff0000";
+                document.getElementById("pwd").placeholder = "Please, try again.";
+                //}
             }
 
         });
