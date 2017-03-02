@@ -27,11 +27,12 @@ module.exports = function(User) {
         //validate bad info isn't comming to this point somehow
         var firstNameRegex = /^[a-zA-Z]+$/;
         var lastNameRegex = /^[a-zA-Z]+$/;
-        var userNameRegex = /^[a-zA-Z0-9]+$/;
-        var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var userNameRegex = /^[a-zA-Z0-9\-\_]+$/;
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!userNameRegex.test(request.body.name) || request.body.name == undefined ||
             !firstNameRegex.test(request.body.firstname) || request.body.firstname == undefined ||
             !lastNameRegex.test(request.body.lastname) || request.body.lastname == undefined ||
+            !emailRegex.test(request.body.email) || request.body.email == undefined ||
             request.body.password == undefined
         ) {
             response.status(400).json({ message: "Bad Request" });

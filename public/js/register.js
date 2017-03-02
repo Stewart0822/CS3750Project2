@@ -4,8 +4,8 @@ function init() {
 
         var firstNameRegex = /^[a-zA-Z]+$/;
         var lastNameRegex = /^[a-zA-Z]+$/;
-        var userNameRegex = /^[a-zA-Z0-9]+$/;
-        var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var userNameRegex = /^[a-zA-Z0-9\-\_]+$/;
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         var firstNameInput = $('#fName').val();
         var lastNameInput = $('#Name').val();
         var userNameInput = $('#uName').val();
@@ -68,16 +68,26 @@ function init() {
                 email.placeholder = "Invalid Email Address";
             }
         }
-        if (pass.value === "" || (pass.value != rpass.value)) {
-            continueLogin = false;
+        if (pass.value === "" || (pass.value != rpass.value) || pass.value.length < 6) {
+            continueLogin = false;            
             if (pass.value === "") {
                 pass.style = "background-color:#99ff99";
                 pass.placeholder = "Required";
             } else {
+                if(pass.value.length < 6)
+                {
+                    pass.value = "";
+                    pass.style = "background-color:#99ff99";
+                    pass.placeholder = "Password too short. 6 characters minimum.";
+                    rpass.value = "";
+                    rpass.style = "background-color:#99ff99";
+                    rpass.placeholder = "Password too short. 6 characters minimum.";
+                }
                 pass.value = "";
                 pass.style = "background-color:#99ff99";
                 pass.placeholder = "Passwords Do Not Match";
             }
+            
         }
         if (rpass.value === "" || (pass.value != rpass.value)) {
             continueLogin = false;
