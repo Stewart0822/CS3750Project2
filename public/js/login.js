@@ -61,6 +61,7 @@ function init() {
             type: 'POST',
             contentType: 'application/json',
             dataType: 'json',
+            cashe: false,
             data: JSON.stringify({ username: username, password: password }),
             success: function(data, textStatus, jqXHR) {
                 window.location = '../chat';
