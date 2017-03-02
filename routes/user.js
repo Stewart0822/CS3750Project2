@@ -61,13 +61,11 @@ module.exports = function(User) {
         var username = request.body.username;
         var password = request.body.password;
 
-        //console.log("in the login post func %S %S", username, password);
         authenticate(request.body.username, request.body.password, function(err, user) {
             if (user) {
                 request.session.myName = user.name;
                 response.status(200).json({ message: "Message received" }); //Changed these out to status codes
             } else {
-                //console.log('in the else');
                 response.status(301).json({ message: "Invalid Login Details Supplied" });
             }
         })
@@ -86,16 +84,19 @@ module.exports = function(User) {
         User.findOne({
                 normalized: name.toLowerCase()
             },
-            //this right here is where it needs (user), but I'm not understanding how that can be "true" and run the pass==user.password
+            
             function(err, user) {
                 if (user) {
                     if (err) return fn(new Error('cannot find user'));
                     if (pass == user.password) {
                         return fn(null, user);
                     }
-                    //need code here in an else statement
+                    else{
+                        return fn(new Error('wrong password'));
+                    }
+                    
                 } else {
-                    //console.log("here1?")
+                    
                     return fn(new Error('cannot find user'));
                 }
             });
