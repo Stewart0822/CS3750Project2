@@ -68,9 +68,9 @@ function init() {
             error: function(err) { 
                 if(err.responseJSON.message == "Invalid Login Details Supplied"){
                     $('#name,#pwd').val("");
-                    document.getElementById("name").style = "background-color:#ff0000";
+                    document.getElementById("name").style = "background-color:#99ff99";
                     document.getElementById("name").placeholder = "LOGIN INVALID";
-                    document.getElementById("pwd").style = "background-color:#ff0000";
+                    document.getElementById("pwd").style = "background-color:#99ff99";
                     document.getElementById("pwd").placeholder = "Please, try again.";
                 }
             }
