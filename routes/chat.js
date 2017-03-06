@@ -36,8 +36,7 @@ module.exports = function(io, User) {
 
                 user.messages.push({ dateTime: thisDate(), message: message });
                 user.save();
-
-                console.log(user);
+                //console.log(user);
             });
             response.status(200).json({ message: "Message received" });
         }
@@ -55,5 +54,3 @@ module.exports = function(io, User) {
 
     return router
 }
-
-//module.exports = router;
