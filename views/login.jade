@@ -1,0 +1,21 @@
+extends Shared/Layout.jade
+
+block content
+    script(src='/js/login.js')
+    div#heading
+        h1 Login
+    br
+    
+    
+    label#userlabels(for='username') User Name
+    input(type='text')#name
+    br
+    label#passlabels(for='password') Password 
+    input(type='password')#pwd
+    br
+    
+    button(name="submit")#btnLogin Login
+    br
+    a(href="/Users/Register", title="Register")#regNew Create New User 
+
+    

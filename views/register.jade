@@ -1,0 +1,35 @@
+extends Shared/Layout.jade
+
+block content
+    script(src='/js/register.js')
+    div#heading
+        h1 Register
+    br
+    div
+        div.inlineBlock#register
+            div
+                span#firstName  First Name:
+                input(type="text", value="" )#fName
+            div
+                span#lastName Last Name:
+                input(type="text", value="" )#lName
+            div
+                span#userName  Username:   
+                input(type="text", value="")#uName
+            //--------------------------------------------------------START The Modal -->
+            div.modal#myModal
+                //-- Modal content -->
+                div.modal-content
+                    span User Was Created Successfully!
+            //--------------------------------------------------------END The Modal ---->
+            div
+                span#emailAddress  Email: 
+                input(type="email", value="")#email
+            div
+                span#pass  Password:
+                input(type="password", value="")#pwd
+            div
+                span#rPass  Re-enter Password:
+                input(type="password", value="")#rPwd
+            div 
+               button(name="submit")#btnRegister Register

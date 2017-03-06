@@ -1,0 +1,65 @@
+extends Shared/Layout.jade
+
+block content
+    h1 About:
+    div#aboutProjectDescription 
+        h2#description Description:
+        blockquote  
+            p
+                |In this assignment you will be creating a real-time social networking application.
+                |Again, this will be a web app that you will design and create from the ground up using the specified stack.
+                |Try to take what you have learned from Project 1 and use it to make this project more manageable and easier to tackle.
+                |This application should enable logged in users to chat back and forth with whomever else is logged in.
+                |Effectively, this should resemble the old 90&rsquo;s style of chat rooms that used to be so prolific on the internet.
+                |Everyone that is logged in should see everyone else&rsquo;s messages, and should be able to respond to the entire connected group.
+                |Your users should be allowed to login and log off, as well as register to create an account. When a new account is created, just add it to the database &ndash; don&rsquo;t worry about sending out emails for confirmation or anything like that. Once logged in, the user should be taken directly to the chat room."      
+    div#aboutRequirements.aboutRequirements-div
+      h2#requirements Requirements:
+        h4 Tech Stack:
+        ul#techStackList
+          li
+            a#nodeJsLink(href='https://nodejs.org/en/') Node.Js
+            br
+            br
+          li
+            a#expressJsLink(href='http://expressjs.com/') Express.Js   
+            br
+            br
+          li
+            a#socketIoLink(href='https://www.npmjs.com/package/socket.io') Socket IO
+          br
+          li
+            a#mongodbLink(href='https://www.mongodb.com') MongoDb
+
+        h4 Website:   
+        blockquote
+            p
+                | For the actual website, you must have at least four pages. One will be the landing page just like last time.
+                | It will have links for logging in, as well as a short description of what the site is for (so that any user that happens upon it knows what they are getting into). You should then have a login page for handling the login requests, and finally a chat room page where users can communicate. Lastly, you should have a registration page so new users can join.   
+      p    
+        h4 Registration:
+      blockquote
+        p
+          | The registration page can be very simple. You should simply ask for a screen name to use, an email address, first and last name, password, and a confirm password.     
+        p
+          | The username should be one word that allows alphanumeric characters, as well as the &ndash; and _ characters. Anything else that is put into that box should be considered invalid and rejected.    
+        p
+            | The email address should follow standard email address rules, and the first and last name should just prohibit being blank. The password should be at least 6 characters, but no other rules should be imposed other than that. I recommend checking the criteria both on the browser side and the server side. Browser-side so that the user doesn&rsquo;t have to wait before realizing they&rsquo;ve made a mistake, and server side so they don&rsquo;t just bypass your security.
+        p
+            | Obviously the password and confirm password should match before allowing the user to register, but only store the password (not both). It is bad practice to store the password as plain text in your database, but for this project I&rsquo;m not concerned with that. If you choose to encrypt your passwords like you would in production, the bcrypt library is perfect for this. You&rsquo;ll need to see the very simple example on the bcrypt page for how to integrate it with Mongoose.     
+        p
+            | If there are errors, show them at the top of the screen above where the user information fields are. If the user has somehow submitted the page and you find the errors on the server, return the user to the register page and display the errors that were found. All fields that have errors should show error messages, not just one at a time (e.g. if I put in a bad password and a bad screen name, I should see both those errors, not just the password or just the bad screen name).    
+      p      
+        h4 Login Page:    
+      blockquote
+        p
+          | The login page can also be very simple, just fields for the email and the password. When the user submits the page, you should check that the user exists and that the password matches. If not, take the user back to the login page and display the error that the screen name or password does not match. Do not inform the user which of the two was wrong or that the user doesn&rsquo;t exist, simply state that things don&rsquo;t match.   
+      p
+        h4 Chat Page:    
+      blockquote
+        p
+          | This should be a single page with two parts. One part should show all the messages that have been entered, and the other should be a simple message box with a submit button. When the user types in a message and hits the submit button, it should send the message to the server. This should then broadcast the message to everyone else, and it should then show up in the messages area. It should also show up for the user that sent it, but the broadcast functionality of Socket.IO will not do this for you. You should simply take the message and append it to the list of messages that have been shown.   
+        p
+          | You will need to send the logged in user&rsquo;s id to the socket controller and make sure it is a valid user. If not, deny the connection. This should work the same way as the login page as far as checking the user on the server. Sending the id can be done simply by including it in the url as a query string parameter, but it can also be done more subtly by using a hidden input tag. If the user does not exist, reject the connection. You should also be denying all requests to access this page unless the user is logged in.
+        p
+          | Think of this as your typical chat or messaging client. It should more or less resemble that. It doesn&rsquo;t need to be fancy, but it should be clear who sent what message. You can use different colors for senders vs. receivers, or you can use default images for the site. In either case the screen name should show precisely who has sent what in the group.

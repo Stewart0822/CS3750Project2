@@ -1,0 +1,431 @@
+body {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #303030;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+h1 {
+    color: cornflowerblue;
+    margin-top: 25px;
+    border-radius: 8px;
+    padding: 10px 35px 10px 35px;
+    width: 15%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#heading {
+    text-align: center;
+}
+
+span#you {
+    color: white;
+    margin: 15px;
+}
+
+span#username,
+span#firstName,
+span#lastName,
+span#userName,
+span#username {
+    color: white;
+    margin-right: 5px;
+    min-width: 125px;
+    width: 125px;
+}
+
+span#emailAddress {
+    color: white;
+    margin-right: 5px;
+    margin-left: 31px;
+}
+
+span#pass {
+    color: white;
+    margin-right: 12px;
+}
+
+span#lastname {
+    color: white;
+    margin-right: 18px;
+}
+
+span#email {
+    color: white;
+    margin-right: 60px;
+}
+
+span#firstname {
+    color: white;
+    margin-right: 22px;
+}
+
+span#repassword {
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+span#rPass {
+    color: white;
+    margin-right: 5px;
+    margin-left: -63px;
+}
+
+span#password {
+    color: white;
+    margin-right: 15px;
+}
+
+#regNew {
+    color: deepskyblue;
+}
+
+input#name,
+input#pwd,
+input#rPwd,
+input#fName,
+input#lName,
+input#uName,
+input#email {
+    width: 300px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input#repassname {
+    width: 255px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.inlineBlock#register {
+    text-align: center;
+}
+
+.inlineBlock#login {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.topAligned {
+    vertical-align: top;
+}
+
+#nav {
+    width: 100%;
+    height: 100px;
+    background: url(images/material.jpg);
+    background-size: cover;
+    
+}
+
+#nav_wrapper {
+    height: 40px;
+    width: 100%;
+    background: #377D7A;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    position: absolute;
+}
+
+#nav_wrapper ul li {
+    list-style: none;
+    display: inline;
+    font-weight: bold;
+    padding: 100px;
+}
+
+#nav_wrapper a {
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+#nav_wrapper a:hover {
+    color: #00ffad;
+}
+
+.button {
+    background-color: #377D7A;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 30px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+h2 {
+    color: cornflowerblue;
+}
+
+h3 {
+    color: cornflowerblue;
+}
+
+h4 {
+    color: cornflowerblue;
+}
+
+p {
+    color: lightblue;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #377D7A;
+    border-radius: 15px;
+    padding: 10px 30px 10px 30px;
+}
+
+.button1:hover {
+    background-color: #377D7A;
+    color: white;
+}
+
+.button#cancel:hover {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+#register {
+    margin-top: 15px;
+}
+
+#register a {
+    margin-top: 5px;
+    color: white;
+}
+
+#chat {
+    margin: auto;
+    width: 90%;
+    height: 405px;
+    background-color: black;
+    position: relative;
+}
+
+#messages {
+    width: 85%;
+    color: white;
+    overflow-y: auto;
+    text-align: left;
+    height: 420px;
+    max-height: 420px;
+    overflow-wrap: break-word;
+    float: left;
+}
+
+.party {
+    background-color: black;
+    color: white;
+    width: 14%;
+    margin: auto;
+    float: right;
+}
+
+.rightPane {
+    float: right;
+}
+
+.leftPane {
+    float: right;
+}
+
+#messageForm {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+#topSubmit {
+    float: right;
+    width: 75px;
+    height: 28px;
+    border-radius: 10px;
+    padding-top: 1px;
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#middleLogin {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#developers {
+    color: lightblue;
+    height: 200px;
+    width: 400px;
+    margin-left: 100px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#about {
+    color: whitesmoke;
+    width: 400px;
+    height: 200Px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 100px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#centerLoginCont {
+    height: 100px;
+    width: 250px;
+    font-family: Arial, sans-serif;
+    margin-left: 200px;
+    margin-top: 120px;
+    float: left;
+}
+
+#aboutProjectDescription {
+    width: 75%;
+    height: 180px;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 160px;
+    margin-right: 10px;
+}
+
+#aboutRequirements {
+    width: 75%;
+    height: 1300px;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 160px;
+    margin-right: 10px;
+}
+
+.aboutRequirements-div a:link,
+.aboutRequirements-div a:visited {
+    color: deepskyblue;
+}
+
+.bananna {
+    color: deepskyblue;
+}
+
+#userlabels {
+    margin: 5px;
+    color: white;
+}
+
+#passlabels {
+    margin-right: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+#username {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#password {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#btnLogin,
+#btnRegister {
+    margin: 10px;
+    border-radius: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+}
+
+#login:hover {
+    margin: 10px;
+    border-radius: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgreen;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #99ff99;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: black;
+    font-weight: bold;
+    font-size: 30px;  
+    border-radius: 5px;  
+}
+
+.close{
+    color: #000000;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

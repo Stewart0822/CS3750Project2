@@ -1,0 +1,32 @@
+extends Shared/Layout.jade
+
+block content
+    div#title
+        div#about
+            p
+                h3 About This Page:   
+            p
+                | This application should enable logged in users to chat back and forth with whomever else is logged in.
+                | Effectively, this should resemble the old 90&rsquo;s style of chat rooms that used to be so prolific on the internet.
+                | Everyone that is logged in should see everyone else&rsquo;s messages, and should be able to respond to the entire connected group.
+                
+        div#centerLoginCont
+            button#middleLogin(type='button', onclick="location.href='/Users/Login'") Login to Chat  
+
+        div#developers
+            p
+                h3 Project By Weber State Students:   
+                ul#devList
+                    li  
+                        a(href='http://www.DanielBigelow.com').bananna Daniel Bigelow:   
+                    li  
+                        a(href='https://github.com/morgandahl').bananna Morgan Dahl:
+                    li  
+                        a(href='https://github.com/blakeCs4790').bananna Blake Freeman:
+                    li  
+                        a(href='https://github.com/messengerja').bananna Justin Messenger:
+                    li  
+                        a(href='https://github.com/nelsonmuhlestein').bananna Nelson Muhlstein:
+                    li  
+                        a(href='https://github.com/Stewart0822').bananna Adam Stewart:
+
